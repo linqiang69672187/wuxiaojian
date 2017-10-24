@@ -1,0 +1,41 @@
+﻿.orgchart {
+  background: #fff; 
+}
+.orgchart td.left, .orgchart td.right, .orgchart td.top {
+  border-color: #aaa;
+}
+.orgchart td>.down {
+  background-color: #aaa;
+}
+.orgchart .middle-level .title {
+
+  background-color: #0A88EC;
+}
+.orgchart .middle-level .content {
+
+  border-color: #0A88EC;
+}
+.orgchart .product-dept .title {
+  background-color: #03A9F5;
+}
+.orgchart .product-dept .content {
+  border-color: #03A9F5;
+}
+.orgchart .rd-dept .title {
+  background-color: #993366;
+}
+.orgchart .rd-dept .content {
+  border-color: #993366;
+}
+.orgchart .pipeline1 .title {
+  background-color: #00BCD5;
+}
+.orgchart .pipeline1 .content {
+  border-color: #00BCD5;
+}
+.orgchart .frontend1 .title {
+  background-color: #cc0066;
+}
+.orgchart .frontend1 .content {
+  border-color: #cc0066;
+}

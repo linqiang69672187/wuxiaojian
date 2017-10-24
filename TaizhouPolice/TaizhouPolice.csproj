@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86D650F2-53E9-46F5-8AA8-F7A44CFB7799}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TaizhouPolice</RootNamespace>
+    <AssemblyName>TaizhouPolice</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GemBox.Spreadsheet">
+      <HintPath>C:\Users\linqiang_f\Downloads\GemBox.Spreadsheet\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\DbComponet.dll" />
+    <Content Include="bin\DbComponet.pdb" />
+    <Content Include="bin\GemBox.Spreadsheet.dll" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\TaizhouPolice.dll" />
+    <Content Include="bin\TaizhouPolice.pdb" />
+    <Content Include="build\ol-debug.js" />
+    <Content Include="build\ol-deps.js" />
+    <Content Include="build\ol.js" />
+    <Content Include="build\ol3-layerswitcher.js" />
+    <Content Include="c3\c3.min.css" />
+    <Content Include="c3\c3.min.js" />
+    <Content Include="comjs\Addcomjs.js" />
+    <Content Include="comjs\apiv2.0.my.js" />
+    <Content Include="comjs\bootstrap-datetimepicker.js" />
+    <Content Include="comjs\bootstrap.min.js" />
+    <Content Include="comjs\datatables.min - 复制.js" />
+    <Content Include="comjs\datatables.min.js" />
+    <Content Include="comjs\handlebars.js" />
+    <Content Include="comjs\highchart.js" />
+    <Content Include="comjs\ion.rangeSlider.js" />
+    <Content Include="comjs\jquery-1.12.3.min - 复制.js" />
+    <Content Include="comjs\jquery.cookie.js" />
+    <Content Include="comjs\jquery.Huploadify.js" />
+    <Content Include="comjs\jquery.js" />
+    <Content Include="comjs\jquery.orgchart.js" />
+    <Content Include="comjs\jquery.pagination.js" />
+    <Content Include="comjs\moment-with-locales.js" />
+    <Content Include="comjs\moment.js" />
+    <Content Include="comjs\myHeatmap2.0.min.js" />
+    <Content Include="CSS\bootstrap-datetimepicker.min.css" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\customModalstyle.css" />
+    <Content Include="CSS\datatables.min.css" />
+    <Content Include="CSS\default.css" />
+    <Content Include="CSS\defaults.css" />
+    <Content Include="CSS\deviceManagement.css" />
+    <Content Include="Global.asax" />
+    <Content Include="五小件版本记录.txt" />
+    <Content Include="bin\TaizhouPolice.dll.config" />
+    <None Include="CSS\font-awesome.min.cssbak" />
+    <Content Include="CSS\font-awesome.min.css" />
+    <Content Include="CSS\head.css" />
+    <Content Include="CSS\Huploadify.css" />
+    <Content Include="CSS\index.css" />
+    <Content Include="CSS\jquery.jOrgChart.css" />
+    <Content Include="CSS\jqueryorgchart.css" />
+    <Content Include="CSS\layerswitcher.css" />
+    <Content Include="CSS\layout.css" />
+    <Content Include="CSS\mianLayot.css" />
+    <Content Include="CSS\mianLayout.css" />
+    <Content Include="CSS\ol.css" />
+    <Content Include="CSS\ol3-layerswitcher.css" />
+    <Content Include="CSS\orgchartzdstyl.css" />
+    <Content Include="CSS\orgstructure.css" />
+    <Content Include="CSS\prism.css" />
+    <Content Include="CSS\uploadify.css" />
+    <Content Include="CSS\userManagement.css" />
+    <Content Include="CSS\Workanalysis.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="images\blank.gif" />
+    <Content Include="images\closedhand.cur" />
+    <Content Include="images\copyright_logo.png" />
+    <Content Include="images\iw3.png" />
+    <Content Include="images\iws3.png" />
+    <Content Include="images\iw_close1d3.gif" />
+    <Content Include="images\iw_minus.gif" />
+    <Content Include="images\iw_plus.gif" />
+    <Content Include="images\iw_plus1d3.gif" />
+    <Content Include="images\mapctrls1d3.gif" />
+    <Content Include="images\mapctrls2d0.gif" />
+    <Content Include="images\mapctrls2d0.png" />
+    <Content Include="images\marker_red_hd.png" />
+    <Content Include="images\marker_red_sprite.png" />
+    <Content Include="images\openhand.cur" />
+    <Content Include="images\ruler.cur" />
+    <Content Include="images\stop_icon.png" />
+    <Content Include="img\00bj1.png" />
+    <Content Include="img\00bj2.png" />
+    <Content Include="img\1-警务通.png" />
+    <Content Include="img\1.png" />
+    <Content Include="img\11.jpg" />
+    <Content Include="img\11.png" />
+    <Content Include="img\bg-policeman-selected.png" />
+    <Content Include="img\big-cloud-selected.png" />
+    <Content Include="img\big-cloud.png" />
+    <Content Include="img\car1.png" />
+    <Content Include="img\car2.png" />
+    <Content Include="img\car3.png" />
+    <Content Include="img\car4.png" />
+    <Content Include="img\car5.png" />
+    <Content Include="img\car6.png" />
+    <Content Include="img\car7.png" />
+    <Content Include="img\dadui.png" />
+    <Content Include="img\data1.png" />
+    <Content Include="img\deviceClick_bg.png" />
+    <Content Include="img\devicepic\1\car\1.png" />
+    <Content Include="img\devicepic\1\car\2.png" />
+    <Content Include="img\devicepic\1\car\3.png" />
+    <Content Include="img\devicepic\1\moto\1.png" />
+    <Content Include="img\devicepic\1\moto\2.png" />
+    <Content Include="img\devicepic\1\moto\3.png" />
+    <Content Include="img\devicepic\2\1.png" />
+    <Content Include="img\devicepic\2\2.png" />
+    <Content Include="img\devicepic\4\1.png" />
+    <Content Include="img\devicepic\4\2.png" />
+    <Content Include="img\devicepic\4\3.png" />
+    <Content Include="img\gjclose.png" />
+    <Content Include="img\interceptor.png" />
+    <Content Include="img\jingjingju.png" />
+    <Content Include="img\jingwutong.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\moto1.png" />
+    <Content Include="img\moto2.png" />
+    <Content Include="img\moto3.png" />
+    <Content Include="img\moto4.png" />
+    <Content Include="img\moto5.png" />
+    <Content Include="img\moto6.png" />
+    <Content Include="img\moto7.png" />
+    <Content Include="img\police-car.png" />
+    <Content Include="img\policeman-avatar.png" />
+    <Content Include="img\qd.png" />
+    <Content Include="img\ser.png" />
+    <Content Include="img\small-cloud-selected.png" />
+    <Content Include="img\small-cloud.png" />
+    <Content Include="img\sprite-skin-flat.png" />
+    <Content Include="img\sprite-skin-modern.png" />
+    <Content Include="img\sprite-skin-nice.png" />
+    <Content Include="img\sprite-skin-simple.png" />
+    <Content Include="img\taizhoulogo.jpg" />
+    <Content Include="img\timg.gif" />
+    <Content Include="img\two-way-radio.png" />
+    <Content Include="img\user1.png" />
+    <Content Include="img\user2.png" />
+    <Content Include="img\user3.png" />
+    <Content Include="img\user4.png" />
+    <Content Include="img\zd.png" />
+    <Content Include="img\zdui.png" />
+    <Content Include="img\警员.png" />
+    <Content Include="JS\LayerMarks.js" />
+    <Content Include="JS\Login.js" />
+    <Content Include="JS\uploadify-cancel.png" />
+    <Content Include="JS\uploadify.swf" />
+    <Content Include="JS\ZeroClipboard.Core.min.js" />
+    <Content Include="Login.html" />
+    <Content Include="Ol\baidu.js" />
+    <Content Include="build\examples\addlayer.html" />
+    <Content Include="build\examples\addlayer.js" />
+    <Content Include="build\examples\browserify\index.html" />
+    <Content Include="build\examples\browserify\index.js" />
+    <Content Include="build\examples\layerswitcher.css" />
+    <Content Include="build\examples\layerswitcher.html" />
+    <Content Include="build\examples\layerswitcher.js" />
+    <Content Include="build\examples\scroll.css" />
+    <Content Include="build\examples\scroll.html" />
+    <Content Include="build\examples\scroll.js" />
+    <Content Include="Ol\loader.js" />
+    <Content Include="Ol\mark.js" />
+    <Content Include="Ol\resources\common.js" />
+    <Content Include="Ol\resources\layout.css" />
+    <Content Include="Ol\resources\logo-70x70.png" />
+    <Content Include="Ol\resources\map-background.jpg" />
+    <Content Include="Ol\resources\mapbox-streets-v6-style.js" />
+    <Content Include="Ol\resources\prism\prism.css" />
+    <Content Include="Ol\resources\prism\prism.min.js" />
+    <Content Include="Ol\resources\zeroclipboard\ZeroClipboard.Core.js" />
+    <Content Include="Ol\resources\zeroclipboard\ZeroClipboard.Core.min.js" />
+    <Content Include="Ol\resources\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="Ol\resources\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="Ol\resources\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="build\src\ol3-layerswitcher.css" />
+    <Content Include="build\src\ol3-layerswitcher.js" />
+    <Content Include="Ol\vertor.js" />
+    <Content Include="Ol\xyz-esri.html" />
+    <Content Include="Ol\xyz-esri.js" />
+    <Content Include="CSS\alramManagement.css" />
+    <Content Include="Page\Header.aspx" />
+    <Content Include="Page\HtmlPage3.html" />
+    <Content Include="Page\stateAnalysis.html" />
+    <Content Include="Page\stateAnalysis.js" />
+    <Content Include="Page\default.html" />
+    <Content Include="Page\alarmManagement.html" />
+    <Content Include="Page\alramManagement.js" />
+    <Content Include="Page\bak\dataManagement.html" />
+    <Content Include="Page\bak\dataManagement.js" />
+    <Content Include="Page\dataManagement.html" />
+    <Content Include="Page\dataManagement.js" />
+    <Content Include="Page\default.js" />
+    <Content Include="Page\deviceManagement.html" />
+    <Content Include="Page\deviceManagement.js" />
+    <Content Include="Page\HtmlPage1.html" />
+    <Content Include="Page\HtmlPage2.html" />
+    <Content Include="Page\index_ol2.html" />
+    <Content Include="Page\index.html" />
+    <Content Include="Page\index.js" />
+    <Content Include="Page\map.js" />
+    <Content Include="Page\Orgstructure.html" />
+    <Content Include="Page\Orgstructure.js" />
+    <Content Include="Page\Orgstructure2.html" />
+    <Content Include="Page\Orgstructure2.js" />
+    <Content Include="Page\qxSetting.html" />
+    <Content Include="Page\qxSetting.js" />
+    <Content Include="Page\entityManagement.html" />
+    <Content Include="Page\entityManagement.js" />
+    <Content Include="Page\userManagement.html" />
+    <Content Include="Page\userManagement.js" />
+    <Content Include="Page\Workanalysis.html" />
+    <Content Include="Page\Workanalysis.js" />
+    <Content Include="Static_Seed_Project\css\bootstrap.css.map" />
+    <Content Include="Static_Seed_Project\css\bootstrap.min.css.map" />
+    <Content Include="Static_Seed_Project\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Static_Seed_Project\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Static_Seed_Project\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Static_Seed_Project\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Static_Seed_Project\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Static_Seed_Project\font-awesome\less\animated.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\core.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\fixed-width.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\font-awesome.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\icons.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\larger.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\list.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\mixins.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\path.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\screen-reader.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\stacked.less" />
+    <Content Include="Static_Seed_Project\font-awesome\less\variables.less" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_animated.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_core.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_icons.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_larger.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_list.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_mixins.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_path.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_stacked.scss" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\_variables.scss" />
+    <Content Include="Static_Seed_Project\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Static_Seed_Project\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Static_Seed_Project\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Static_Seed_Project\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="less\customModalstyl.import.less" />
+    <Content Include="less\dataanalysis.import.less" />
+    <Content Include="less\dataManagement.less" />
+    <Content Include="less\datetimepicker.import.less" />
+    <Content Include="less\deviceManagement.import.less" />
+    <Content Include="less\devices.import.less" />
+    <Content Include="less\index.import.less" />
+    <Content Include="less\login.import.less" />
+    <Content Include="less\mainLayout.import.less" />
+    <Content Include="less\orgchart_css\jquery.orgchart.less" />
+    <Content Include="less\orgchart_css\orgchartstyle1.less" />
+    <Content Include="less\orgchart_css\orgchartzdstyle.less" />
+    <Content Include="less\orgstructure.import.less" />
+    <Content Include="less\orgstructure1.import.less" />
+    <Content Include="less\pagination.less" />
+    <Content Include="less\policepass.import.less" />
+    <Content Include="less\publicpage.import.less" />
+    <Content Include="less\userManagement.import.less" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="CSS\orgstructure2.css" />
+    <Content Include="Handle\Orgchart\CreateOrgchart.ashx" />
+    <Content Include="Handle\Orgchart\GetDeviceStatusByUser.ashx" />
+    <Content Include="Handle\Orgchart\SearchContacts.ashx" />
+    <Content Include="Handle\Orgchart\GetEntitys.ashx" />
+    <Content Include="Handle\Orgchart\GetContacts.ashx" />
+    <Content Include="Handle\Orgchart\GetDevicecountByparentID.ashx" />
+    <Content Include="Handle\Orgchart\GetDevicecountByUser.ashx" />
+    <Content Include="Handle\Workanalysis.ashx" />
+    <Content Include="Handle\SszkStatus.ashx" />
+    <Content Include="Handle\GetDataManagement.ashx" />
+    <Content Include="Handle\GetStatusDeviceID.ashx" />
+    <Content Include="Handle\Checklogin.ashx" />
+    <Content Include="Handle\GetDevicesToManage.ashx" />
+    <Content Include="Handle\AddDevice.ashx" />
+    <Content Include="Handle\GetRole.ashx" />
+    <Content Include="Handle\AddEditRole.ashx" />
+    <Content Include="Handle\GetUsers.ashx" />
+    <Content Include="Handle\AddUser.ashx" />
+    <Content Include="Handle\GetAlarmGate.ashx" />
+    <Content Include="Handle\EditAlarmGate.ashx" />
+    <Content Include="Handle\GetAlarm.ashx" />
+    <Content Include="Handle\GetaMarksbyBound.ashx" />
+    <Content Include="Handle\Orgchart\GetDevicesStatus - 复制.ashx" />
+    <Content Include="Handle\Orgchart\GetDeviceStatusByUser - 复制.ashx" />
+    <Content Include="Ol\resources\zeroclipboard\ZeroClipboard.Core.min.map" />
+    <Content Include="Ol\resources\zeroclipboard\ZeroClipboard.min.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="comjs\fonts\fontawesome-webfont.eot" />
+    <Content Include="comjs\fonts\fontawesome-webfont.svg" />
+    <Content Include="comjs\fonts\fontawesome-webfont.ttf" />
+    <Content Include="comjs\fonts\fontawesome-webfont.woff" />
+    <Content Include="comjs\fonts\fontawesome-webfont.woff2" />
+    <Content Include="comjs\fonts\FontAwesome.otf" />
+    <Content Include="comjs\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="comjs\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="comjs\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="comjs\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="comjs\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Handle\GetcoordinateBydevid.ashx" />
+    <Content Include="build\examples\browserify\package.json" />
+    <Content Include="build\examples\browserify\README.md" />
+    <Content Include="Handle\Orgchart\GetDevicesStatus.ashx" />
+    <Content Include="Handle\Orgchart\GetDevicesStatus - 复制%282%29.ashx" />
+    <Content Include="Handle\GetDataManagementDay.ashx" />
+    <Content Include="Handle\Orgchart\default_chart.ashx" />
+    <Content Include="Handle\GetOrgstructureTable.ashx" />
+    <Content Include="Handle\GetStateAnalysiss.ashx" />
+    <Content Include="Handle\UploadHandler.ashx" />
+    <Content Include="Handle\GetExcel.ashx" />
+    <Content Include="Handle\Upload\daoru.xls" />
+    <Content Include="Handle\Upload\数据导入模版.xls" />
+    <Content Include="Handle\ExportaAnalysisExcel.ashx" />
+    <Content Include="Handle\templet\1.xls" />
+    <Content Include="Handle\templet\2.xls" />
+    <Content Include="Handle\templet\3.xls" />
+    <Content Include="Handle\templet\4.xls" />
+    <Content Include="Handle\templet\5.xls" />
+    <Content Include="Handle\GetEntitys.ashx" />
+    <Content Include="Handle\GetManageEntitys.ashx" />
+    <Content Include="Handle\AddEntity.ashx" />
+    <Content Include="Handle\AddGPS.ashx" />
+    <Content Include="Handle\templet\数据管理\10.xls" />
+    <Content Include="Handle\templet\数据管理\11.xls" />
+    <Content Include="Handle\templet\数据管理\20.xls" />
+    <Content Include="Handle\templet\数据管理\21.xls" />
+    <Content Include="Handle\templet\数据管理\30.xls" />
+    <Content Include="Handle\templet\数据管理\31.xls" />
+    <Content Include="Handle\templet\数据管理\40.xls" />
+    <Content Include="Handle\templet\数据管理\41.xls" />
+    <Content Include="Handle\templet\数据管理\50.xls" />
+    <Content Include="Handle\templet\数据管理\51.xls" />
+    <Content Include="Handle\Upload\sjtj\数据导入模版.xls" />
+    <Content Include="log4net.config" />
+    <None Include="Properties\PublishProfiles\五小件.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\login.css" />
+    <Content Include="CSS\merged-stylesheets.css" />
+    <Content Include="CSS\normalize.css" />
+    <Content Include="CSS\orgchartstyle1.css" />
+    <Content Include="Static_Seed_Project\css\animate.css" />
+    <Content Include="Static_Seed_Project\css\bootstrap.css" />
+    <Content Include="Static_Seed_Project\css\bootstrap.min.css" />
+    <Content Include="Static_Seed_Project\css\patterns\1.png" />
+    <Content Include="Static_Seed_Project\css\patterns\2.png" />
+    <Content Include="Static_Seed_Project\css\patterns\3.png" />
+    <Content Include="Static_Seed_Project\css\patterns\4.png" />
+    <Content Include="Static_Seed_Project\css\patterns\5.png" />
+    <Content Include="Static_Seed_Project\css\patterns\6.png" />
+    <Content Include="Static_Seed_Project\css\patterns\7.png" />
+    <Content Include="Static_Seed_Project\css\patterns\congruent_pentagon.png" />
+    <Content Include="Static_Seed_Project\css\patterns\header-profile-skin-1.png" />
+    <Content Include="Static_Seed_Project\css\patterns\header-profile-skin-2.png" />
+    <Content Include="Static_Seed_Project\css\patterns\header-profile-skin-3.png" />
+    <Content Include="Static_Seed_Project\css\patterns\header-profile.jpg" />
+    <Content Include="Static_Seed_Project\css\patterns\header-profile.png" />
+    <Content Include="Static_Seed_Project\css\patterns\otis_redding.png" />
+    <Content Include="Static_Seed_Project\css\patterns\shattered.png" />
+    <Content Include="Static_Seed_Project\css\patterns\triangular.png" />
+    <Content Include="Static_Seed_Project\css\style.css" />
+    <Content Include="Static_Seed_Project\dataanalysis.html" />
+    <Content Include="Static_Seed_Project\font-awesome\css\font-awesome.css" />
+    <Content Include="Static_Seed_Project\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Static_Seed_Project\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Static_Seed_Project\font-awesome\less\font-awesome.css" />
+    <Content Include="Static_Seed_Project\font-awesome\less\mixins.css" />
+    <Content Include="Static_Seed_Project\font-awesome\less\variables.css" />
+    <Content Include="Static_Seed_Project\font-awesome\scss\font-awesome.css" />
+    <Content Include="Static_Seed_Project\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Static_Seed_Project\img\profile_small.jpg" />
+    <Content Include="Static_Seed_Project\index.html" />
+    <Content Include="Static_Seed_Project\js\bootstrap.js" />
+    <Content Include="Static_Seed_Project\js\bootstrap.min.js" />
+    <Content Include="Static_Seed_Project\js\handlebars.js" />
+    <Content Include="Static_Seed_Project\js\inspinia.js" />
+    <Content Include="Static_Seed_Project\js\jquery-3.1.1.min.js" />
+    <Content Include="Static_Seed_Project\js\plugins\dataTables\datatables.min.js" />
+    <Content Include="Static_Seed_Project\js\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Static_Seed_Project\js\plugins\pace\pace.min.js" />
+    <Content Include="Static_Seed_Project\js\plugins\slimscroll\jquery.slimscroll.js" />
+    <Content Include="Static_Seed_Project\js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Static_Seed_Project\minor.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonClass\LogHelper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\AddDevice.ashx.cs">
+      <DependentUpon>AddDevice.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\AddEditRole.ashx.cs">
+      <DependentUpon>AddEditRole.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\AddEntity.ashx.cs">
+      <DependentUpon>AddEntity.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\AddGPS.ashx.cs">
+      <DependentUpon>AddGPS.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\AddUser.ashx.cs">
+      <DependentUpon>AddUser.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Checklogin.ashx.cs">
+      <DependentUpon>Checklogin.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\EditAlarmGate.ashx.cs">
+      <DependentUpon>EditAlarmGate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\ExportaAnalysisExcel.ashx.cs">
+      <DependentUpon>ExportaAnalysisExcel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetAlarm.ashx.cs">
+      <DependentUpon>GetAlarm.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetAlarmGate.ashx.cs">
+      <DependentUpon>GetAlarmGate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetaMarksbyBound.ashx.cs">
+      <DependentUpon>GetaMarksbyBound.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetcoordinateBydevid.ashx.cs">
+      <DependentUpon>GetcoordinateBydevid.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetDataManagement.ashx.cs">
+      <DependentUpon>GetDataManagement.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetDataManagementDay.ashx.cs">
+      <DependentUpon>GetDataManagementDay.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetDevicesToManage.ashx.cs">
+      <DependentUpon>GetDevicesToManage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetEntitys.ashx.cs">
+      <DependentUpon>GetEntitys.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetExcel.ashx.cs">
+      <DependentUpon>GetExcel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetManageEntitys.ashx.cs">
+      <DependentUpon>GetManageEntitys.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetOrgstructureTable.ashx.cs">
+      <DependentUpon>GetOrgstructureTable.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetRole.ashx.cs">
+      <DependentUpon>GetRole.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetStateAnalysiss.ashx.cs">
+      <DependentUpon>GetStateAnalysiss.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetStatusDeviceID.ashx.cs">
+      <DependentUpon>GetStatusDeviceID.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\GetUsers.ashx.cs">
+      <DependentUpon>GetUsers.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\CreateOrgchart.ashx.cs">
+      <DependentUpon>CreateOrgchart.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\default_chart.ashx.cs">
+      <DependentUpon>default_chart.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\GetContacts.ashx.cs">
+      <DependentUpon>GetContacts.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\GetDevicecountByparentID.ashx.cs">
+      <DependentUpon>GetDevicecountByparentID.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\GetDevicecountByUser.ashx.cs">
+      <DependentUpon>GetDevicecountByUser.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\GetDevicesStatus - 复制%282%29.ashx.cs">
+      <DependentUpon>GetDevicesStatus - 复制%282%29.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\GetDevicesStatus.ashx.cs">
+      <DependentUpon>GetDevicesStatus.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\GetDevicesStatus - 复制.ashx.cs">
+      <DependentUpon>GetDevicesStatus - 复制.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\GetDeviceStatusByUser - 复制.ashx.cs">
+      <DependentUpon>GetDeviceStatusByUser - 复制.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\GetDeviceStatusByUser.ashx.cs">
+      <DependentUpon>GetDeviceStatusByUser.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\GetEntitys.ashx.cs">
+      <DependentUpon>GetEntitys.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Orgchart\SearchContacts.ashx.cs">
+      <DependentUpon>SearchContacts.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\SszkStatus.ashx.cs">
+      <DependentUpon>SszkStatus.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\UploadHandler.ashx.cs">
+      <DependentUpon>UploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\Workanalysis.ashx.cs">
+      <DependentUpon>Workanalysis.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Header.aspx.cs">
+      <DependentUpon>Header.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Header.aspx.designer.cs">
+      <DependentUpon>Header.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DbComponet\DbComponet.csproj">
+      <Project>{3371620a-5db3-4f11-a64e-72c8c293bb7c}</Project>
+      <Name>DbComponet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EntityImg\" />
+    <Folder Include="log\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1590</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1590/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

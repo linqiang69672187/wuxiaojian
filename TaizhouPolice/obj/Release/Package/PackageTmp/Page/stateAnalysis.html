@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五小件管理平台</title>
+</head>
+<body>
+    <link href="../Static_Seed_Project/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/merged-stylesheets.css" rel="stylesheet">
+
+
+
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet" />
+
+    <!--<link href="../CSS/orgchartstyle1.css" rel="stylesheet" />
+
+    <link href="../CSS/orgstructure.css" rel="stylesheet" />-->
+
+    <link href="../CSS/alramManagement.css" rel="stylesheet" />
+
+    <link href="../CSS/Workanalysis.css" rel="stylesheet" />
+
+    <link href="../CSS/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+    <link href="../CSS/datatables.min.css" rel="stylesheet" />
+
+
+    <link href="../CSS/customModalstyle.css" rel="stylesheet" />
+    <style>
+        #search-result-table_wrapper .row {
+            text-align: center;
+        }
+        div.dataTables_wrapper div.dataTables_paginate {
+            text-align: center;
+        }
+        .table:not(#jwt-result-table)>tbody>tr>td, 
+        .table:not(#jwt-result-table)>tbody>tr>th, 
+        .table:not(#jwt-result-table)>tfoot>tr>td, 
+        .table:not(#jwt-result-table)>tfoot>tr>th, 
+        .table:not(#jwt-result-table)>thead>tr>td, 
+        .table:not(#jwt-result-table)>thead>tr>th {
+            vertical-align:middle;
+        }
+        table:not(#jwt-result-table).dataTable thead .sorting:after, 
+        table:not(#jwt-result-table).dataTable thead .sorting_asc:after, 
+        table:not(#jwt-result-table).dataTable thead .sorting_desc:after, 
+        table:not(#jwt-result-table).dataTable thead .sorting_asc_disabled:after, 
+        table:not(#jwt-result-table).dataTable thead .sorting_desc_disabled:after{
+            bottom: 12px;
+        }
+        table:not(#jwt-result-table).dataTable thead>tr>th.sorting_asc, 
+        table:not(#jwt-result-table).dataTable thead>tr>th.sorting_desc, 
+        table:not(#jwt-result-table).dataTable thead>tr>th.sorting, 
+        table:not(#jwt-result-table).dataTable thead>tr>td.sorting_asc, 
+        table:not(#jwt-result-table).dataTable thead>tr>td.sorting_desc, 
+        table:not(#jwt-result-table).dataTable thead>tr>td.sorting {
+            padding-right: 8px;
+        }
+        #jwt-result-table>tbody>tr>td, 
+        #jwt-result-table>tbody>tr>th, 
+        #jwt-result-table>tfoot>tr>td, 
+        #jwt-result-table>tfoot>tr>th{
+            vertical-align: middle;
+          
+        }
+    </style>
+    <div id="header"></div>
+    <div class="publicpage" id="dataManagement">
+        <div class="current-page-title">
+            <h3>五小件报表分析</h3>
+        </div>
+        <div class="search-condition">
+            <div class="search-head clearfix">
+                <div class="search-condition-title">
+                    <i class="glyphicon glyphicon-th-list"></i>
+                    <span>查询条件</span>
+                </div>
+            </div>
+            <div class="search-content">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>设备名称:</label>
+                            <select class="form-control" id="deviceName">
+                                <!--<option value="all">全部</option>--> 
+                             
+                                <option value="1">车载视频</option>
+                                <option value="4">警务通</option>
+                                <option value="2">对讲机</option>
+                                <option value="3">拦截仪</option>
+                                <option value="5">执法记录仪</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>所属大队:</label>
+                            <select class="form-control" id="brigadeselect">
+                                <option value="all">全部</option>
+                             
+                    
+                                
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>所属中队:</label>
+                            <select class="form-control"  id="squadronselect">
+                                <option value="all">全部</option>
+                              
+                              
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group" role="group" aria-label="..." data-toggle="tooltip" title="1" style="margin-left: 20px;">
+                                <button type="button" class="btn btn-default btngroupactive">周</button>
+                                <button type="button" class="btn btn-default">月</button>
+                                <button type="button" class="btn btn-default">季</button>
+
+                            </div>
+                            <div class="cell-button bt2 shishi" style="border-radius: 5px; background-color: #66B21E; display: inline-block; margin-left: 10px; height: 30px; width: 60px; line-height: 30px; text-align: center; color: white; " id="cz-bianji">汇总</div>
+                        </div>
+                    </div>
+                </div>
+              
+
+            </div>
+        </div>
+        <div class="search-result">
+
+            <div class="table-responsive" style="overflow-x:hidden;height:755px;">
+                <div class="table-scroll"><div class="progress progress-striped active" style="width:80%;margin:0 auto;"><div class="floot-zhbar progress-bar progress-bar-success" role="progressbar"aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div> </div><table class="table table-striped dataTables-example" id="search-result-table">
+        <thead> 
+            <tr>
+                <th>序号</th>
+                <th>大队</th>
+                <th>中队</th>
+                <th>警员人数(人)</th>
+                <th>设备配发数(台)</th>
+                <th>在线时长总和(小时)</th>
+                <th>视频大小(GB)</th>
+                <th>设备使用率</th>
+               
+            </tr>
+
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td> 
+                <td ></td>  
+           </tr>
+        </tfoot>
+    </table>
+                    <table class="table table-striped dataTables-example" id="jwt-result-table" style="display:none;width:100%">
+                        <thead>
+                            <tr>
+                                <th width="40px" rowspan="2">序号</th>
+                                <th width="120px" rowspan="2">单位名称</th>
+                                <th rowspan="2">警员数</th>
+                                <th rowspan="2">配发数量</th>
+                                <th colspan="3">警务通处罚数</th>
+                                <th colspan="3">警务通处罚占现场处罚比例</th>
+                                <th colspan="3">机器平均处罚量</th>
+                                <th colspan="3">人均处罚量</th>
+                            </tr>
+                            <tr>
+                              
+                                <th>今年</th>
+                                <th>去年</th>
+                                <th>同比</th>
+                                <th>今年</th>
+                                <th>去年</th>
+                                <th>同比</th>
+                                <th>今年</th>
+                                <th>去年</th>
+                                <th>同比</th>
+                                <th>今年</th>
+                                <th>去年</th>
+                                <th>同比</th>
+                            </tr>
+
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td ></td>
+                                <td ></td>
+                                <td ></td>
+                                <td ></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td align="left"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+
+</div>
+            </div>
+        
+                <div class="search-result-flooterleft" >
+                    <label>统计周期:<span></span></label>
+                    <label style="float:right;"><span></span></label>
+                </div>
+               
+        </div>
+       
+    </div>
+ 
+
+    
+    <script src="../comjs/jquery.js"></script>
+    <script src="../comjs/bootstrap.min.js"></script>
+    <script src="../comjs/jquery.cookie.js"></script>
+    <script src="../comjs/bootstrap-datetimepicker.js"></script>
+    <script src="../comjs/datatables.min.js"></script>
+
+    <script src="stateAnalysis.js"></script>
+
+  
+  
+    <script>
+        $("#header").load('Header.aspx', function () {
+
+            //实时状态下拉列表监听
+            $("#one-menu").on("click", function () {
+                if ($("#sjzt_systemSettings-menu").is(":hidden")) {
+                    $("#sjzt_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                }
+                $("#one-menu").parent().on("mouseleave", function () {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                });
+            });
+
+            //系统设置下拉列表监听
+            $("#two-menu").on("click", function () {
+                if ($("#two_systemSettings-menu").is(":hidden")) {
+                    $("#two_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#two_systemSettings-menu").slideUp(500);
+                }
+            });
+
+            $("#two-menu").parent().on("mouseleave", function () {
+                $("#two_systemSettings-menu").slideUp(500);
+            });
+            $("#header .nav .nav-menu ul li").eq(5).addClass("active");
+   
+
+        });
+  
+    </script>
+</body>
+</html>

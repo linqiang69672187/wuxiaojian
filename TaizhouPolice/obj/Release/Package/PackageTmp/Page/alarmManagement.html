@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五小件管理平台</title>
+
+</head>
+<body>
+
+    <link href="../Static_Seed_Project/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/merged-stylesheets.css" rel="stylesheet">
+
+    <link href="../CSS/datatables.min.css" rel="stylesheet" />
+
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet" />
+
+    <!--<link href="../../CSS/orgchartstyle1.css" rel="stylesheet" />
+
+    <link href="../../CSS/orgstructure.css" rel="stylesheet" />-->
+
+    <link href="../CSS/alramManagement.css" rel="stylesheet" />
+
+    <link href="../CSS/Workanalysis.css" rel="stylesheet" />
+
+    <link href="../CSS/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+  
+
+    <link href="../CSS/customModalstyle.css" rel="stylesheet" />
+ 
+   <div id="header"></div>
+    <div class="publicpage" id="alramManagement">
+        <div class="current-page-title">
+            <h3>五小件告警管理</h3>
+        </div>
+        <div class="search-condition">
+            <div class="search-head clearfix">
+                <div class="search-condition-title">
+                    <i class="glyphicon glyphicon-th-list"></i>
+                    <span>查询条件</span>
+                </div>
+               
+                <div class="setArlarm">
+                    <button class="btn">告警设置</button>
+                </div>
+             
+            </div>
+            <div class="search-content">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>设备名称:</label>
+                            <select class="form-control" id="deviceName">
+                                <!--<option>全部</option>-->
+                                <option value="4">警务通</option>
+                                <option value="1">车载视频</option>
+                            
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>所属大队:</label>
+                            <select class="form-control" id="brigadeselect">
+                                <option value="all">全部</option>
+                               
+                         
+                               
+
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>所属中队:</label>
+                            <select class="form-control" disabled="disabled" id="squadronselect">
+                                <option value="all">全部</option>
+                            
+                              
+                          
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>告警类型:</label>
+                            <select class="form-control" id="alarmType">
+                                <option value="all">全部</option>
+                                <option value="1">在线时长</option>
+                                <option value="2">处理量</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>设备状态:</label>
+                            <select class="form-control" id="alarmState">
+                                <option value="all">全部</option>
+                                <option value="1">告警</option>
+                                <option value="0">正常</option>
+                            </select>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="form-group" id="date1">
+                    <label>统计时间:</label>
+                    <div class="input-group date" id="start-data">
+                        <input type="text" class="form-control start_form_datetime">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </div>
+                    <span>-</span>
+                    <div class="input-group date" id="end-data">
+                        <input type="text" class="form-control end_form_datetime">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="..." style="margin-left: 20px;">
+                        <button type="button" style="font-family:'Microsoft YaHei'; " class="btn btn-default btngroupactive" id="todaybtn">昨日</button>
+                        <button type="button" style="font-family:'Microsoft YaHei'; " class="btn btn-default " id="weeklybtn">本周</button>
+                        <button type="button" style="font-family:'Microsoft YaHei'; " class="btn btn-default" id="monthbtn">当月</button>
+                        <button type="button" class="btn btn-default" id="monthbtn">本季</button>
+                        <button type="button" class="btn btn-default" id="monthbtn">本年</button>
+                    </div>
+                    <div class="cell-button bt2 shishi" style="border-radius: 5px; background-color: #66B21E; display: inline-block; margin-left: 10px; height: 30px; width: 60px; line-height: 30px; text-align: center; color: white; " id="cz-bianji">查看</div>
+                </div>
+            </div>
+        </div>
+        <div class="search-result">
+            <div class="search-head clearfix">
+                <div class="search-condition-title">
+                    <i class="glyphicon glyphicon-th-list"></i>
+                    <span>查询结果</span>
+                </div>
+                <div class="seach-box">
+                    <div class="input-group seach-box">
+                        <input type="text" class="form-control " style="height:34px;" placeholder="请输入设备或车辆或联系人">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive" style="overflow-y: auto; height: calc(100%-400px);">
+                <table class="table table-striped table-hover dataTables-example" id="search-result-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>设备名称</th>
+                            <th>设备编号</th>
+                            <th>所在车辆</th>
+                            <th>所属大队</th>
+                            <th>所属中队</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>状态</th>
+                            <th>告警类型</th>
+                            <th>告警日期</th>
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+     
+                <div class="search-result-flooterleft">
+                  
+                    <label>设备:<span>n台</span></label>
+                </div>
+               
+           
+           
+        </div>
+    
+    </div>
+
+
+
+    <!--{{> setAlarmInforModle}}-->
+    <!-- {{> deleModeNo}}-->
+
+    <div class="modal fade custom-modal" id="myModalClearOneAlarm" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">清除确认框</h4>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary toClearOneAlarm" data-dismiss="modal">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+   
+
+    <!--告警设置-->
+    <div class="modal fade custom-modal" id="setAlarmInforModle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">告警设置</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-title">
+                        <select class="form-control" id="deviceNameset">
+                            <!--<option>全部</option>-->
+                           
+                            <option value="4">警务通</option>
+                            <option value="1">车载视频</option>
+                        </select>
+                    </div>
+                    <div class="set-param">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>告警类型</th>
+                                    <th>一般告警</th>
+                                    <th></th>
+                                    <th style="text-align:center;">紧急告警</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              
+                               
+                               
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-qr" >保存</button>
+                    <button type="button" class="btn btn-primary btn-reset">重置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../comjs/jquery.js"></script>
+    <script src="../comjs/bootstrap.min.js"></script>
+    <script src="../comjs/jquery.cookie.js"></script>
+    <script src="../comjs/bootstrap-datetimepicker.js"></script>
+    <script src="../comjs/datatables.min.js"></script>
+    <script src="alramManagement.js"></script>
+    <script>
+        $("#header").load('Header.aspx', function () {
+
+            //实时状态下拉列表监听
+            $("#one-menu").on("click", function () {
+                if ($("#sjzt_systemSettings-menu").is(":hidden")) {
+                    $("#sjzt_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                }
+                $("#one-menu").parent().on("mouseleave", function () {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                });
+            });
+
+            //系统设置下拉列表监听
+            $("#two-menu").on("click", function () {
+                if ($("#two_systemSettings-menu").is(":hidden")) {
+                    $("#two_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#two_systemSettings-menu").slideUp(500);
+                }
+            });
+
+            $("#two-menu").parent().on("mouseleave", function () {
+                $("#two_systemSettings-menu").slideUp(500);
+            });
+
+            $("#header .nav .nav-menu ul li").eq(5).addClass("active");
+      
+
+
+
+        });
+        function bannertype(e) {
+
+            $.cookie("bannertype", e);
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

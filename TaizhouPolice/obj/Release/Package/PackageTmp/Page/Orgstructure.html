@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五小件管理平台</title>
+</head>
+
+<body>
+    <link href="../Static_Seed_Project/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/merged-stylesheets.css" rel="stylesheet">
+    <link href="../CSS/mianLayot.css" rel="stylesheet" />
+
+
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet" />
+    <link href="../CSS/jquery.jOrgChart.css" rel="stylesheet" />
+    <link href="../CSS/orgchartstyle1.css" rel="stylesheet" />
+    <link href="../CSS/orgstructure.css" rel="stylesheet" />
+    <link href="../CSS/datatables.min.css" rel="stylesheet" />
+    <link href="../CSS/customModalstyle.css" rel="stylesheet" />
+    <div id="header">
+
+    </div>
+  
+
+
+    <div id="box">
+        <div id="orgstructure" class="publicpage">
+            <div class="row" style="margin-right: 0px; margin-left: 0px; ">
+                <div id="leftbox" style="float: left;width:calc(100% - 520px);">
+
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a>组织树架构</a></li>
+                            <!--<li role="presentation"><a href="Orgstructure2.html" id='zz'>列表架构</a></li>-->
+                        </ul>
+                    </div>
+
+                    <div id="chart-container">
+
+
+
+
+                    </div>
+
+                </div>
+             
+                <div style="width:510px;float:right;">
+                    <div class="devices-table">
+                        <div class="search-box">
+                            <div class="input-group">
+                                <input type="text" id="contacts-name" class="form-control" placeholder="请输入联系人姓名">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default search-btn" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="devices-table-head">
+                            <div>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist" style="border: transparent;">
+                                    <li role="presentation" class="active"><a id="sjtj" href="#zd_rightbar" style="padding-top: 5px;padding-bottom: 5px;" data-toggle="tab">数据统计</a></li>
+                                    <li role="presentation"><a id='sblb' href="#xd_rightbar" style="padding-top: 5px;padding-bottom: 5px;" data-toggle="tab">设备列表</a></li>
+                                </ul>
+                            </div>
+                            <!--  <p class="table-head-title">设备列表</p>-->
+                            <!--<div class="arrow-icon"></div>-->
+                            <div class="right-lenged">
+                                <img src='../img/11.jpg' style="float: right;height: 30px;" />
+                            </div>
+                        </div>
+                        <!-- {{#if Szzd选中中队显示这个}}-->
+                        <div class="devices-table-content" id="zd_rightbar">
+                            <div class="left-content">
+                                <div class="wrap" >
+                                    <div class="entitylogod" style="text-align: center; margin-top: 116px;">
+                                        <img class="selected-avatar" src="">
+                                        <p class="selected-name"></p>
+                                    </div>
+                                    <ul class="contactsul" style="cursor:pointer;display:none;"></ul>
+                                </div>
+                            </div>
+                            <div class="right-content">
+
+
+                                <!--1个cell {{#with gzsbsl}}-->
+                                <div class="cell" id="czspdiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/police-car.png">
+
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">车载视频</div>
+                                        <div class="cell-device-count">数量:<span>0</span></div>
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <!--<div class="cell-button bt1 cz-shishi {{isssedit cz_kc}}" id="cz-shishi">实时状态</div>-->
+                                            <!--<div class="cell-button bt2 cz-bianji {{isbjedit cz_kc}}" id="cz-bianji">编辑</div>-->
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <!--<div class="cell-button bt3 cz-shuju">数据统计</div>-->
+                                    </div>
+
+                                    <div class="floot-bar progress progress-striped active " style="border-radius: 0px; margin-bottom: 0; cursor: pointer;" data-toggle="tooltip" data-placement="top" data-html="true" title="">
+                                        <div class="floot-zhbar progress-bar progress-bar-success" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 0%;" title="">
+
+                                        </div>
+                                       
+                                        <div class="floot-xy2bar progress-bar progress-bar-warning" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 0%;">
+
+                                        </div>
+                                        
+                                        <div class="floot-gzbar progress-bar progress-bar-danger" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 100%;">
+
+                                        </div>
+                                    </div>
+                           
+                                </div>
+                                <!--1个cell-->
+                                <div class="cell bgg" id="djjdiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/two-way-radio.png">
+                                        <!--<div class="signs">
+                               <div class="signimpt red-sign"></div>
+                            </div>-->
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">对讲机</div>
+                                        <div class="cell-device-count">数量:<span>0</span></div>
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <!--<div class="cell-button bt1 djj-shishi {{isssedit djj_kc}}" id="djj-shishi">实时状态</div>-->
+                                            <!--  <div class="cell-button bt2 djj-bianji {{isbjedit djj_kc}}" id="djj-bianji">编辑</div>-->
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <!-- <div class="cell-button bt3 djj-shuju" id="djj-shuju">数据统计</div>-->
+                                    </div>
+                                    <div class="floot-bar progress progress-striped active " style="border-radius: 0px; margin-bottom: 0; cursor: pointer;" data-toggle="tooltip" data-placement="top" data-html="true" title="">
+                                        <div class="floot-zhbar progress-bar progress-bar-success" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 0%;" title="">
+
+                                        </div>
+                                       
+                                        <div class="floot-xy2bar progress-bar progress-bar-warning" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 0%;">
+
+                                        </div>
+                                        <div class="floot-gzbar progress-bar progress-bar-danger" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 100%;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--1个cell-->
+                                <div class="cell" id="ljydiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/interceptor.png">
+                                        <!--<div class="signs">
+                               <div class="signimpt yellow-sign"></div>
+                            </div>-->
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">拦截仪</div>
+                                        <div class="cell-device-count">数量:<span>0</span></div>
+                                        <!--<div class="cell-device-count">{{ljy_count}}</div>-->
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <!--<div class="cell-button bt1 ljy-shishi {{isssedit ljy_kc}}" id="ljy-shishi">实时状态</div>-->
+                                            <!--<div class="cell-button bt2 ljy-bianji {{isbjedit ljy_kc}}" id="ljy-bianji">编辑</div>-->
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <!--<div class="cell-button bt3 ljy-shuju" id="ljy-shuju">数据统计</div>-->
+                                    </div>
+                                    <div class="floot-bar progress progress-striped active " style="border-radius: 0px; margin-bottom: 0; cursor: pointer;" data-toggle="tooltip" data-placement="top" data-html="true" title="">
+                                        <div class="floot-zhbar progress-bar progress-bar-success" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 0%;" title="">
+
+                                        </div>
+                                        
+                                        <div class="floot-xy2bar progress-bar progress-bar-warning" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 0%;">
+
+                                        </div>
+                                        <div class="floot-gzbar progress-bar progress-bar-danger" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 100%;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--1个cell-->
+                                <div class="cell bgg" id="jwtdiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/jingwutong.png">
+                                        <!--<div class="signs">
+                               <div class="signimpt green-sign"></div>
+                            </div>-->
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">警务通</div>
+                                        <div class="cell-device-count">数量:<span>0</span></div>
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <!-- <div class="cell-button bt1 jwt-shishi {{isssedit jwt_kc}}" id="jwt-shishi">实时状态</div>-->
+                                            <!-- <div class="cell-button bt2 jwt-bianji {{isbjedit jwt_kc}}" id="jwt-bianji">编辑</div>-->
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <!-- <div class="cell-button bt3 jwt-shuju" id="jwt-shuju">数据统计</div>-->
+                                    </div>
+                                    <div class="floot-bar progress progress-striped active " style="border-radius:0px;margin-bottom:0;cursor:pointer;" data-toggle="tooltip" data-placement="top" data-html="true" title="">
+                                        <div class="floot-zhbar progress-bar progress-bar-success" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 0%;"></div>
+                                     
+                                        <div class="floot-xy2bar progress-bar progress-bar-warning" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 0%;">
+
+                                        </div>
+                                        <div class="floot-gzbar progress-bar progress-bar-danger" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 100%;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--1个cell-->
+                                <div class="cell" id="zfjlydiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/ser.png">
+                                        <!--<div class="signs">
+                                <div class="signimpt green-sign"></div>
+                            </div>-->
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">执法记录仪</div>
+                                        <div class="cell-device-count">数量:<span>0</span></div>
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <!-- <div class="cell-button bt1 jly-shishi {{isssedit jly_count}}" id="jly-shishi">实时状态</div>-->
+                                            <!-- <div class="cell-button bt2 jly-bianji {{isbjedit jly_count}}" id="jly-bianji">编辑</div>-->
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <!-- <div class="cell-button bt3 jly-shuju" id="jly-shuju">数据统计</div>-->
+                                    </div>
+                                    <div class="floot-bar progress progress-striped active " style="border-radius: 0px; margin-bottom: 0; cursor: pointer;" data-toggle="tooltip" data-placement="top" data-html="true" title="">
+                                        <div class="floot-zhbar progress-bar progress-bar-success" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style=" width:0%;">
+
+                                        </div>
+                                        
+                                        <div class="floot-xy2bar progress-bar progress-bar-warning" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 0%;">
+
+
+                                        </div>
+                                        <div class="floot-gzbar progress-bar progress-bar-danger" role="progressbar"
+                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 100%;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- {{结束{{/with}}}}-->
+
+                            </div>
+                        </div>
+                   
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--查看中队详情-->
+    <div class="modal fade custom-modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="max-width:1070px;width:100%;">
+            <div class="modal-content" style="max-width:1070px;width:100%;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModaltxzsLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <div id="txbox" style="height:430px;">
+                        <div class="progress progress-striped active" style="width:80%;margin:0 auto;">
+                            <div class="floot-zhbar progress-bar progress-bar-success" role="progressbar"
+                                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                 style="width: 100%;"></div>
+                        </div>
+                        <table class="table table-striped dataTables-example" id="detail-result-table" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>所属大队</th>
+                                    <th style="width:170px">所属中队</th>
+                                    <th>统计日期</th>
+                                    <th>所属车辆</th>
+                                    <th width="60px">姓名</th>
+                                    <th width="40px">时长</th>
+                                    <th>警号</th>
+                                    <th>IMEI</th>
+                                    <th>电话号码</th>
+                                    <th>设备状态</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="search-result-flooterleft" style="margin-left:30px;width:1030px">
+                    <label>总数:<span></span></label>
+                    <label style="float:right;"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script src="../comjs/jquery.js"></script>
+    <script src="../comjs/jquery.orgchart.js"></script>
+    <script src="../comjs/jquery.cookie.js"></script>
+    <script src="../comjs/bootstrap.min.js"></script>
+    <script src="../comjs/datatables.min.js"></script>
+    <script src="Orgstructure.js"></script>
+   
+    <script>
+        $("#header").load('Header.aspx', function () {
+
+            //实时状态下拉列表监听
+            $("#one-menu").on("click", function () {
+                if ($("#sjzt_systemSettings-menu").is(":hidden")) {  
+                    $("#sjzt_systemSettings-menu").slideDown(500); 
+                } else {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                }
+                $("#one-menu").parent().on("mouseleave", function () {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                });
+            });
+
+            //系统设置下拉列表监听
+            $("#two-menu").on("click", function () {
+                if ($("#two_systemSettings-menu").is(":hidden")) {
+                    $("#two_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#two_systemSettings-menu").slideUp(500);
+                }
+            });
+
+            $("#two-menu").parent().on("mouseleave", function () {
+                $("#two_systemSettings-menu").slideUp(500);
+            });
+         
+            $("#header .nav .nav-menu ul li").eq(1).addClass("active");
+
+        });
+
+        function bannertype(e) {
+
+            $.cookie("bannertype", e);
+            window.location.href = "index.html";
+        }
+    </script>
+  
+
+</body>
+</html>

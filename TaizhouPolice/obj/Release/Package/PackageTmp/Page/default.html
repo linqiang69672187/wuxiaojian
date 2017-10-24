@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五小件管理平台</title>
+
+</head>
+<body>
+
+    <link href="../Static_Seed_Project/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../CSS/default.css" rel="stylesheet" />
+
+
+ 
+   <div id="header"></div>
+   <div class="row"><div ><div class="devicebg selectdevice"><div class="cell-device"><img style="margin-top:-10px;" class="cell-device-img" src="../img/police-car.png"></div><p>车载视频</p></div><div class="devicebg"><div class="cell-device"><img class="cell-device-img" src="../img/jingwutong.png"></div><p>警务通</p></div><div class="devicebg"><div class="cell-device"><img class="cell-device-img" style="margin-top:-15px;" src="../img/interceptor.png"></div><p>拦截仪</p></div><div class="devicebg"><div class="cell-device"><img class="cell-device-img" src="../img/two-way-radio.png" style="margin-top:-40px;"></div><p>对讲机</p></div><div class="devicebg"><div class="cell-device"><img class="cell-device-img" src="../img/ser.png"></div><p>执法记录仪</p></div></div></div>
+    <div class="row">
+        <div class="chartbody">
+            <div class="chartrow">
+                <div class="row cell-device-title"><span>设备分布</span></div>
+                <div class="row">
+                    <div class="row charthold" id="sbfb">
+                        
+                    </div>
+                    <div class="row">
+                        <div class="btn-group" id="bt_sbfb" role="group" aria-label="..." data-toggle="tooltip" style="margin-left: 105px;">
+                            <button type="button" class="btn btn-default btngroupactive">车载视频</button>
+                            <button type="button" class="btn btn-default ">警务通</button>
+                            <button type="button" class="btn btn-default">拦截仪</button>
+                            <button type="button" class="btn btn-default">对讲机</button>
+                            <button type="button" class="btn btn-default">执法记录仪</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chartrow" style="float:right;">
+                <div class="row cell-device-title"><span>设备在线</span><span style="float:right;font-size:12px;margin-top:5px;margin-right:5px;" id="reftime"></span></div>
+                <div class="row">
+                    <div class="row charthold" id="sbzx">
+                      
+                    </div>
+                    <div class="row">
+                        <div class="btn-group" id="bt_sbzx" role="group" aria-label="..." data-toggle="tooltip" style="margin-left: 193px;">
+                            <button type="button" class="btn btn-default btngroupactive">车载视频</button>
+                            <button type="button" class="btn btn-default ">警务通</button>
+                            <button type="button" class="btn btn-default">拦截仪</button>
+                            <button type="button" class="btn btn-default">对讲机</button>
+                            <button type="button" class="btn btn-default" style="display:none;">执法记录仪</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <div class="row">
+    <div class="chartbody">
+    <div class="chartrow">
+        <div class="row cell-device-title"><span>预警占比</span></div>
+        <div class="row">
+            <div class="row charthold" id="yjzb">
+
+            </div>
+            <div class="row">
+                <div class="btn-group" role="group" id="bt_yjzb" aria-label="..." data-toggle="tooltip" style="margin-left: 105px;">
+                    <button type="button" class="btn btn-default btngroupactive">车载视频</button>
+                    <button type="button" class="btn btn-default ">警务通</button>
+                    <button type="button" class="btn btn-default">拦截仪</button>
+                    <button type="button" class="btn btn-default">对讲机</button>
+                    <button type="button" class="btn btn-default">执法记录仪</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chartrow" style="float:right;">
+        <div class="row cell-device-title"><span>预警趋势</span></div>
+        <div class="row">
+            <div class="row charthold" id="yjqs">
+                
+            </div>
+            <div class="row">
+                <div class="btn-group" role="group" id="bt_yjqs" aria-label="..." data-toggle="tooltip" style="margin-left: 105px;">
+                    <button type="button" class="btn btn-default btngroupactive">车载视频</button>
+                    <button type="button" class="btn btn-default ">警务通</button>
+                    <button type="button" class="btn btn-default">拦截仪</button>
+                    <button type="button" class="btn btn-default">对讲机</button>
+                    <button type="button" class="btn btn-default">执法记录仪</button>
+
+                </div>
+            </div>
+        </div>
+     </div>
+     </div>
+   </div>
+   <div class="row"></div>
+    <script src="../comjs/jquery.js"></script>
+    <script src="../comjs/bootstrap.min.js"></script>
+    <script src="../comjs/highchart.js"></script>
+    <script src="../comjs/jquery.cookie.js"></script>
+    <script src="default.js"></script>
+    <script>
+        $("#header").load('Header.aspx', function () {
+
+            //实时状态下拉列表监听
+            $("#one-menu").on("click", function () {
+                if ($("#sjzt_systemSettings-menu").is(":hidden")) {
+                    $("#sjzt_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                }
+                $("#one-menu").parent().on("mouseleave", function () {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                });
+            });
+
+            //系统设置下拉列表监听
+            $("#two-menu").on("click", function () {
+                if ($("#two_systemSettings-menu").is(":hidden")) {
+                    $("#two_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#two_systemSettings-menu").slideUp(500);
+                }
+            });
+
+            $("#two-menu").parent().on("mouseleave", function () {
+                $("#two_systemSettings-menu").slideUp(500);
+            });
+
+            $("#header .nav .nav-menu ul li").eq(0).addClass("active");
+      
+
+
+
+        });
+
+        function bannertype(e) {
+
+            $.cookie("bannertype", e);
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

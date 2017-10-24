@@ -1,0 +1,413 @@
+﻿ .devices-table{
+        width: 510px;
+        height: 555px;
+    }
+.search-box {
+    width: 510px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+        .form-control{
+            height: 40px;
+        }
+        .search-btn{
+            background-color: #005EB8;
+            border-color: #005EB8;
+            height: 40px;
+            width:41px;
+            color:#ffffff;
+        }
+        .glyphicon{
+           
+        }
+
+.devices-table-head {
+    height: 34px;
+    background-color: rgb(0, 94, 184);
+}
+            .table-head-title{
+                font-size: 14px;
+                color: white;
+                margin-left: 10px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                float:left;
+                margin-bottom: 0px;
+            }
+            .arrow-icon{
+                float:right;
+                color:white;
+                font-size:14px;
+            }
+
+.devices-table-content {
+    border: 1px solid #CCCCCC;
+    float: left;
+    width: 100%;
+    height: 521px;
+    margin-top: 0px;
+}
+.left-content {
+    border-right: 1px solid #CCCCCC;
+    float: left;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+            .selected-avatar{
+                width:169px;
+                height:240px;
+            }
+            .selected-name{
+                text-align: center;
+                font-size: 18px;
+                color: rgb(51,51,51);
+            }
+
+.right-content {
+    float: right;
+    width: 308px;
+    height: 100%;
+}
+            .bgg{
+                background-color:rgb(230, 239, 255);
+            }
+.cell {
+    height: 104px;
+    display: flex;
+    align-items: center;
+}
+                .col-center{
+                    width: 70px;
+                }
+.cell-col {
+    margin-left: 10px;
+    text-align: center;
+    height: 70px;
+    font-size: 14px;
+}
+                    .cell-device-name{
+                        margin-top:6px;
+    
+                    }
+                    .cell-device-count{
+                        margin-top:16px;
+                    }
+
+.cell-device-img-wrap {
+    margin-left: 10px;
+    height: 75px;
+    width: 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+                    .cell-device-img{
+    
+                    }
+         
+                .cell-button{
+                    position:abosulte;
+                    font-size:12px;
+                    height: 30px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .bt1{
+                        background-color: grey;
+                        border-radius: 5px;
+                        height: 30px;
+                        width: 60px;
+                        /* text-align: center; */
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        float:left;
+                }
+                .bt2{
+                    margin-left: 10px;
+                    background-color: grey;
+                    border-radius: 5px;
+                    height: 30px;
+                    width: 60px;
+                    /* text-align: center; */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    float: left;
+                }
+                .bt3{
+                        background-color: clear;
+                        border-radius: 5px;
+                        margin-top: 6px;
+                        height: 30px;
+                        width: 60px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: black;
+                        float: left;
+                        border: 1px solid #CCCCCC;
+                        width: 100%;
+                }
+                .ssbj1{
+                   background-color: #66B21E;
+                   cursor: pointer;
+                }
+                .ssbj2{
+                   background-color: #0847A9;
+                   cursor: pointer;
+                }
+  
+
+    #leftbox{
+        padding-right: 0px;
+        margin-top: 10px;
+        display: flex;
+        height: 605px;
+    }
+    #leftbox .brigadebox{
+        width: 25%;
+        background-color: #E4EAF4;
+    }
+    #leftbox .brigadebox .brigadtitle {
+        height: 30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    #leftbox .brigadebox .brigadtitle p{
+        
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 30px;
+        margin-bottom: 0px;
+        margin-left: 20px;
+    }
+    #leftbox .brigadebox .brigadeul{
+        list-style-type:none;  
+        margin:0px;
+        padding: 0px;
+    }
+    #leftbox .brigadebox .brigadeul li{
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+        padding-left: 20px;
+        
+    }
+    #leftbox .brigadebox .brigadeul li:hover{
+        background-color:#005EB8;
+        color: #fff;
+    }
+    #leftbox .brigadebox .brigadeul li span{
+        cursor: pointer;
+    }
+    #leftbox .squadronbox{
+        width: 35%;
+        height: 100%;
+        overflow-y:auto;
+        background-color: #F5F9FF;
+        border-left: 1px solid #CFCFCF;
+        border-right: 1px solid #CFCFCF;
+        display: none;
+    }
+    #leftbox .squadronbox .squadronul{
+        list-style-type:none;  
+        margin:0px;
+        padding: 0px;
+    }
+    #leftbox .squadronbox .squadronul li{
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+        padding-left: 20px;
+    }
+    #leftbox .squadronbox .squadronul li:hover{
+        background-color:#005EB8;
+        color: #fff;
+    }
+    #leftbox .squadronbox .squadronul li span{
+        cursor: pointer;
+    }
+    #leftbox .contactsbox{
+        width: 40%;
+        background-color: #F8FBFF;
+        display: none;
+    }
+    #leftbox .contactsbox .contactsul{
+        list-style-type:none;  
+        margin:0px;
+        padding: 0px;
+    }
+    #leftbox .contactsbox .contactsul li{
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+        padding-left: 20px;
+        position: relative;
+    }
+    #leftbox .contactsbox .contactsul li:hover{
+        background-color:#005EB8;
+        color: #fff;
+        
+    }
+    #leftbox .contactsbox .contactsul li span{
+        cursor: pointer;
+    }
+    #leftbox .contactsbox .contactsul li .energybar{
+        display: inline-block;
+        width: 100px;
+        height: 20px;
+        border-radius: 10px;
+        border: 1px solid gainsboro;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    } 
+    #leftbox .contactsbox .contactsul li .energybar .energybarbj{
+        height:19px;
+        background-color: rgb(102, 178, 30);
+        border-radius: 10px;
+    }
+    #leftbox ul li.active{
+        background-color:#005EB8;
+        color: #fff;
+    }
+    .sbdropdown{
+        border-top: 1px solid #CFCFCF;
+        border-bottom: 1px solid #CFCFCF;
+    }
+    .sbdropdown p{
+        font-size: 14px;
+        margin-bottom: 0px;
+        line-height: 40px;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+    .sbdropdown p span{
+        text-align: center;
+        margin-left: 10px;
+    }
+    .sbdropdown p i{
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    .dropdownmenu{
+        border-top:1px solid #CFCFCF;
+        display: none;
+    }
+    .dropdownmenu .dropdownul{
+        list-style-type:none;  
+        margin:0px;
+        padding: 0px;
+    }
+    .dropdownmenu .dropdownul li{
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .dropdownmenu .dropdownul li:hover{
+        background-color:#005EB8;
+        color: #fff;
+    }
+    .dropdownmenu .dropdownul li span{
+        padding-left: 20px;
+        cursor: pointer;
+    }
+    
+    #leftbox1{
+        padding-right: 0px;
+        margin-top: 10px;
+        
+    }
+    #leftbox1 .brigadebox1{
+        width: 100%;
+        padding-top: 20px;
+        background-color: #E4EAF4;
+        height: 605px;
+        overflow: auto;
+    }
+    #leftbox1 .brigadebox1 .brigadtitle1 {
+        height: 30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    #leftbox1 .brigadebox1 .brigadtitle1 p{
+        
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 30px;
+        margin-bottom: 0px;
+        margin-left: 20px;
+    }
+    #leftbox1 .brigadebox1 .brigadeul1{
+        list-style-type:none;  
+        margin:0px;
+        padding: 0px;
+    }
+    #leftbox1 .brigadebox1 .brigadeul1 li{
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+        padding-left: 20px;
+        
+    }
+    #leftbox1 .brigadebox1 .brigadeul1 li:hover{
+        background-color:#005EB8;
+        color: #fff;
+    }
+    #leftbox1 .brigadebox1 .brigadeul1 li span{
+        cursor: pointer;
+    }
+    #sbxz{
+    }
+    #sbxz .sbdropdown1{
+        width: 100%;
+        height: 50px;
+        background-color: #F5F9FF;
+    }
+    #sbxz .sbdropdown1 .dropdownul1{
+        list-style-type:none;  
+        margin:0px;
+        padding: 0px;
+    }
+    #sbxz .sbdropdown1 .dropdownul1 li{
+        float: left;
+        height: 50px;
+        text-align: center;
+        width: 100px;
+    }
+    #sbxz .sbdropdown1 .dropdownul1 li span{
+        line-height: 50px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .progress{
+        display: inline-block;
+        width: 200px;
+        margin-bottom: 0px;
+        position: absolute;
+        top:5px;
+        right: 10px;
+    }
+ .shishi,.bianji{
+  background-color: #66B21E;
+  cursor: pointer;
+    }
+ .shuju{
+background-color:#005EB8;
+        color: #fff;
+    
+ }
+
+ .brigadeul li:hover,.squadronul li:hover,.contactsul li:hover{
+     cursor:pointer;
+ }

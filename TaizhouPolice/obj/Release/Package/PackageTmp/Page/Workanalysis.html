@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>五小件管理平台</title>
+</head>
+
+<body>
+    <link href="../Static_Seed_Project/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/merged-stylesheets.css" rel="stylesheet">
+    <link href="../CSS/mianLayot.css" rel="stylesheet" />
+
+    
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="../CSS/orgchartstyle1.css" rel="stylesheet" />
+    <link href="../CSS/orgstructure.css" rel="stylesheet" />
+  
+    <link href="../CSS/index.css" rel="stylesheet" />
+    <link href="../CSS/Workanalysis.css" rel="stylesheet" />
+    <link href="../CSS/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../OpenLayers/theme/default/style.css" rel="stylesheet" />
+    <div id="header">
+
+    </div>
+    <div id="index">
+        <div id="dataanalysis">
+            <div id="mapdraw"></div>
+            <div class="boxleft">
+                <!--<button type="button" id="btn1">增加</button>-->
+                <div class="carVideo">
+                    <div class="carVideo-title">
+                        <p>
+                            设备名称:
+                            <select class="form-control" id="selectdevices">
+                                <!--1.车载视频  2.对讲机 3.拦截仪 4.警务通 5.执法记录仪-->
+                                <option value="4">警务通</option>
+                                <!--<option value="1">车载视频</option>-->
+                           
+                            </select>
+                         
+                            <select class="form-control" id="selectonline">
+                                <option value="zxsc">在线时长</option>
+                                <option value="cll">处理量</option>
+                              
+                                <!--<option value='lxzxsc'>连续在线时长</option>
+                             
+                                <option value='lxlxsc'>连续离线时长</option>-->
+                            </select>
+                          
+                            <i class="glyphicon glyphicon-chevron-down" style="vertical-align:middle;"></i>
+                        </p>
+                    </div>
+                    <div class="carVideo-box">
+                        <div class="form-group" id="data_1">
+                            <label>开始时间</label>
+                            <div class="input-group date">
+                                <input type="text" class="form-control start_form_datetime" >
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </div>
+                        </div>
+                        <div class="form-group" id="data_2">
+                            <label>结束时间</label>
+                            <div class="input-group date">
+                                <input type="text" class="form-control end_form_datetime" >
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </div>
+                        </div>
+                        <div class="form-group" id="team-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>所属大队</label>
+                                    <select class="form-control" id="brigadeselect">
+                                        <option value="all">全部</option>
+                                        
+                                       
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>所属中队</label>
+                                    <select class="form-control " id="squadronselect" disabled="disabled">
+                                        <option value="all">全部</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id="team-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>联系人&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                    <select class="form-control" id="contactselect" disabled="disabled">
+                                        <option value="all">全部</option>
+                                 
+                                    </select>
+                                    
+                                </div>
+                                <div class="cell-button bt2 shishi"  id="cz-bianji">查看</div>
+                                <div class="col-md-6">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default btngroupactive" id="todaybtn">昨日</button>
+                            <button type="button" class="btn btn-default " id="weeklybtn">本周</button>
+                            <button type="button" class="btn btn-default" id="monthbtn">当月</button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="echartbox">
+                            <div id="echartbox1">
+                         
+
+                            </div>
+                            <!--<div id="echartbox2"></div>-->
+                            <!--<div id="echartbox3"></div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rllegend" style="display:none">
+                <p>热力图例</p>
+                <div class="rllegendbox">
+                    <div class="densityL">
+                        密度低
+                    </div>
+                    <div class="densityM">
+                        密度中
+                    </div>
+                    <div class="densityH">
+                        密度高
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul id="controlToggle" style="display:none;">
+        <li>
+            <input type="radio" name="type" value="none" id="noneToggle"
+                   onclick="toggleControl(this);" checked="checked" />
+            <label for="noneToggle">平移</label>
+            <input type="radio" name="type" value="line" id="lineToggle" onclick="toggleControl(this);" />
+            <label for="lineToggle">测距</label>
+            <input type="radio" name="type" value="polygon" id="polygonToggle" onclick="toggleControl(this);" />
+            <label for="polygonToggle">测面积</label>
+        </li>
+        <li>
+            <input type="checkbox" name="geodesic" id="geodesicToggle" onclick="toggleGeodesic(this);" />
+            <label for="geodesicToggle">使用地理测量</label>
+            <input type="checkbox" name="immediate" id="immediateToggle" onclick="toggleImmediate(this);" />
+            <label for="immediateToggle">使用动态测量</label>
+            <div id="output">
+            </div>
+        </li>
+        
+    </ul>
+
+    <script src="../comjs/jquery.js"></script>
+    <script src="../comjs/bootstrap-datetimepicker.js"></script>
+    <script src="../comjs/jquery.cookie.js"></script>
+    <script src="Workanalysis.js"></script>
+
+    <script src="../OpenLayers/OpenLayers.js"></script>
+    <script src="../OpenLayers/examples/ArcGISCacheExtent.js"></script>
+    <script src="../OpenLayers/examples/arcgisCacheInfo.js"></script>
+
+    <script src="../comjs/highchart.js"></script>
+
+    <script src="map.js"></script>
+    <script>
+        $("#header").load('Header.aspx', function () {
+
+            //实时状态下拉列表监听
+            $("#one-menu").on("click", function () {
+                if ($("#sjzt_systemSettings-menu").is(":hidden")) {
+                    $("#sjzt_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                }
+                $("#one-menu").parent().on("mouseleave", function () {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                });
+            });
+
+            //系统设置下拉列表监听
+            $("#two-menu").on("click", function () {
+                if ($("#two_systemSettings-menu").is(":hidden")) {
+                    $("#two_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#two_systemSettings-menu").slideUp(500);
+                }
+            });
+
+            $("#two-menu").parent().on("mouseleave", function () {
+                $("#two_systemSettings-menu").slideUp(500);
+            });
+    
+            $("#header .nav .nav-menu ul li").eq(1).addClass("active");
+
+        });
+        function bannertype(e) {
+
+            $.cookie("bannertype", e);
+            window.location.href = "index.html";
+        }
+  
+    </script>
+
+
+</body>
+</html>

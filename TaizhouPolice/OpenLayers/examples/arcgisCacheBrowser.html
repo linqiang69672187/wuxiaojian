@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>ArcGIS缓存地图离线访问示例 - 太乐地图</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../theme/default/style.css" type="text/css">
+        <script src="../lib/OpenLayers.js"></script>
+        <script src="ArcGISCacheExtent.js" type="text/javascript"></script>
+		<script src="arcgisCacheInfo.js"></script>
+        <script type="text/javascript">
+            var map;
+			var markers;
+			var currentPopup;
+			
+			AutoSizeAnchored = OpenLayers.Class(OpenLayers.Popup.Anchored, {
+				'autoSize': true
+			});
+			
+            function init(){
+                map = new OpenLayers.Map('map', {
+                    maxExtent:mapExtent,
+					displayProjection: new OpenLayers.Projection("EPSG:4326"), // 设置此显示投影参数后，显示坐标皆为4326
+                    controls: [
+                        new OpenLayers.Control.Navigation(),
+                        new OpenLayers.Control.LayerSwitcher(), 
+                        new OpenLayers.Control.PanZoomBar(),
+                        new OpenLayers.Control.MousePosition()]
+                });
+                
+                var baseLayer = new OpenLayers.Layer.ArcGISCacheExtent('平面图', baseUrl, {
+                    tileOrigin: agsTileOrigin,
+                    resolutions: mapResolutions,
+                    sphericalMercator: true,
+                    //maxExtent: mapExtent,
+                    useArcGISServer: false,
+                    isBaseLayer: true,
+                    type: imageType,
+                    projection: proj,
+					resolutionIndex:resolutionIndex
+                });
+                map.addLayers([baseLayer]);
+                map.zoomToExtent(mapExtent);
+				
+				
+				// ===创建用户自定义地标===
+				markers = new OpenLayers.Layer.Markers("警员");
+				map.addLayer(markers);
+				var points = pointsStr.split("##");
+				for(var i=0;i<points.length;i++)
+				{
+					var ll, popupClass, popupContentHTML;
+					var point = points[i];
+					var info = point.split('$');
+					ll = new OpenLayers.LonLat(parseFloat(info[1]), parseFloat(info[0]));
+					popupClass = AutoSizeAnchored;
+					popupContentHTML = '<div>' + info[2] + '</div>';
+					addMarker(ll, popupClass, popupContentHTML, true);
+				}
+				
+				// 增加鹰眼控件
+				var overview = new OpenLayers.Control.OverviewMap({
+					maximized: true
+				});
+				map.addControl(overview);
+				
+				// 增加鼠标实时坐标控件
+				var mp = new OpenLayers.Control.MousePosition();
+				map.addControl(mp);
+				// 设置控件位置为左下角
+				mp.div.style.bottom = "10px";
+				mp.div.style.left = "10px";
+				
+				// 配置绘制的点线面样式
+				var sketchSymbolizers = {
+					"Point": {
+						pointRadius: 4,
+						graphicName: "square",
+						fillColor: "white",
+						fillOpacity: 1,
+						strokeWidth: 1,
+						strokeOpacity: 1,
+						strokeColor: "#333333"
+					},
+					"Line": {
+						strokeWidth: 3,
+						strokeOpacity: 1,
+						strokeColor: "#666666",
+						strokeDashstyle: "dash"
+					},
+					"Polygon": {
+						strokeWidth: 2,
+						strokeOpacity: 1,
+						strokeColor: "#666666",
+						fillColor: "white",
+						fillOpacity: 0.3
+					}
+				};
+				var style = new OpenLayers.Style();
+				style.addRules([
+					new OpenLayers.Rule({symbolizer: sketchSymbolizers})
+				]);
+				var styleMap = new OpenLayers.StyleMap({"default": style});
+				
+				// 允许通过cancvas进行点线面渲染
+				var renderer = OpenLayers.Util.getParameters(window.location.href).renderer;
+				renderer = (renderer) ? [renderer] : OpenLayers.Layer.Vector.prototype.renderers;
+
+				measureControls = {
+					line: new OpenLayers.Control.Measure(
+						OpenLayers.Handler.Path, {
+							persist: true,
+							handlerOptions: {
+								layerOptions: {
+									renderers: renderer,
+									styleMap: styleMap
+								}
+							}
+						}
+					),
+					polygon: new OpenLayers.Control.Measure(
+						OpenLayers.Handler.Polygon, {
+							persist: true,
+							handlerOptions: {
+								layerOptions: {
+									renderers: renderer,
+									styleMap: styleMap
+								}
+							}
+						}
+					)
+				};
+				
+				var control;
+				for(var key in measureControls) {
+					control = measureControls[key];
+					control.events.on({
+						"measure": handleMeasurements,
+						"measurepartial": handleMeasurements
+					});
+					map.addControl(control);
+				}
+				
+				document.getElementById('noneToggle').checked = true;
+            }
+			
+			function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+				var feature = new OpenLayers.Feature(markers, ll); 
+				feature.closeBox = closeBox;
+				feature.popupClass = popupClass;
+				feature.data.popupContentHTML = popupContentHTML;
+				feature.data.overflow = (overflow) ? "auto" : "hidden";
+						
+				var marker = feature.createMarker();
+
+				var markerClick = function (evt) {
+					if (this.popup == null) {
+						this.popup = this.createPopup(this.closeBox);
+						map.addPopup(this.popup);
+						this.popup.show();
+					} else {
+						this.popup.toggle();
+					}
+					currentPopup = this.popup;
+					OpenLayers.Event.stop(evt);
+				};
+				marker.events.register("mousedown", feature, markerClick);
+
+				markers.addMarker(marker);
+			}
+			
+			// 测量相关方法
+			function handleMeasurements(event) {
+				var geometry = event.geometry;
+				var units = event.units;
+				var order = event.order;
+				var measure = event.measure;
+				var element = document.getElementById('output');
+				var out = "";
+				if(order == 1) {
+					out += "测量结果: " + measure.toFixed(3) + " " + units;
+				} else {
+					out += "测量结果: " + measure.toFixed(3) + " " + units + "<sup>2</" + "sup>";
+				}
+				element.innerHTML = out;
+			}
+
+			function toggleControl(element) {
+				for(key in measureControls) {
+					var control = measureControls[key];
+					if(element.value == key && element.checked) {
+						control.activate();
+					} else {
+						control.deactivate();
+					}
+				}
+			}
+			
+			function toggleGeodesic(element) {
+				for(key in measureControls) {
+					var control = measureControls[key];
+					control.geodesic = element.checked;
+				}
+			}
+			
+			function toggleImmediate(element) {
+				for(key in measureControls) {
+					var control = measureControls[key];
+					control.setImmediate(element.checked);
+				}
+			}
+        </script>
+    </head>
+    <body onload="init()">
+		<h1 id="title" style="font-size:20px;">太乐地图ArcGIS缓存地图离线访问示例</h1>   
+        <div id="map" style="width:800;height:500px;"></div>
+		<ul id="controlToggle">
+            <li>
+                <input type="radio" name="type" value="none" id="noneToggle"
+                       onclick="toggleControl(this);" checked="checked" />
+                <label for="noneToggle">平移</label>
+                <input type="radio" name="type" value="line" id="lineToggle" onclick="toggleControl(this);" />
+                <label for="lineToggle">测距</label>
+                <input type="radio" name="type" value="polygon" id="polygonToggle" onclick="toggleControl(this);" />
+                <label for="polygonToggle">测面积</label>			
+            </li>
+            <li>
+				<input type="checkbox" name="geodesic" id="geodesicToggle" onclick="toggleGeodesic(this);" />
+                <label for="geodesicToggle">使用地理测量</label>
+                <input type="checkbox" name="immediate" id="immediateToggle" onclick="toggleImmediate(this);" />
+                <label for="immediateToggle">使用动态测量</label>
+				<div id="output">
+				</div>	
+            </li>
+			<li>
+			更多其它功能请<a href="http://openlayers.org/download/" target="_blank">点我</a>下载最新版OpenLayers源码，里面有很多demo哦 --- 
+			OpenLayers官网：<a href="http://www.openlayers.org/" target="_blank">点我</a>
+			OpenLayers中文官网：<a href="http://www.openlayers.cn/" target="_blank">点我</a>
+			</li>
+        </ul>
+    </body>
+</html>

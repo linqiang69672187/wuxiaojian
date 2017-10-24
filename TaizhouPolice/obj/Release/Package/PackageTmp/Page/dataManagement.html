@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五小件管理平台</title>
+</head>
+<body>
+    <link href="../Static_Seed_Project/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/merged-stylesheets.css" rel="stylesheet">
+
+
+
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet" />
+
+    <!--<link href="../CSS/orgchartstyle1.css" rel="stylesheet" />
+
+    <link href="../CSS/orgstructure.css" rel="stylesheet" />-->
+
+    
+
+    <link href="../CSS/Workanalysis.css" rel="stylesheet" />
+
+    <link href="../CSS/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../CSS/datatables.min.css" rel="stylesheet" />
+    <link href="../CSS/alramManagement.css" rel="stylesheet" />
+
+    <link href="../CSS/customModalstyle.css" rel="stylesheet" />
+    <style>
+        #search-result-table_wrapper .row {
+            text-align: center;
+        }
+        div.dataTables_wrapper div.dataTables_paginate {
+            text-align: center;
+        }
+        .table>tbody>tr>td, 
+        .table>tbody>tr>th, 
+        .table>tfoot>tr>td, 
+        .table>tfoot>tr>th, 
+        .table>thead>tr>td, 
+        .table>thead>tr>th {
+            vertical-align:middle;
+        }
+        table.dataTable thead .sorting:after, 
+        table.dataTable thead .sorting_asc:after, 
+        table.dataTable thead .sorting_desc:after, 
+        table.dataTable thead .sorting_asc_disabled:after, 
+        table.dataTable thead .sorting_desc_disabled:after{
+            bottom: 12px;
+        }
+        table.dataTable thead>tr>th.sorting_asc, 
+        table.dataTable thead>tr>th.sorting_desc, 
+        table.dataTable thead>tr>th.sorting, 
+        table.dataTable thead>tr>td.sorting_asc, 
+        table.dataTable thead>tr>td.sorting_desc, 
+        table.dataTable thead>tr>td.sorting {
+            padding-right: 8px;
+        }
+        /* 中队详情样式 */
+        #myModaltxzs .modal-body #txbox table thead tr th{
+            text-align: center;
+        }
+        #myModaltxzs table.dataTable thead .sorting:after, 
+        #myModaltxzs table.dataTable thead .sorting_asc:after, 
+        #myModaltxzs table.dataTable thead .sorting_desc:after, 
+        #myModaltxzs table.dataTable thead .sorting_asc_disabled:after, 
+        #myModaltxzs table.dataTable thead .sorting_desc_disabled:after{
+            bottom: 8px;
+            right: 0px;
+        }
+        /* 个人详情样式 */
+        #myModalgr .modal-body #txbox table thead tr th{
+            text-align: center;
+        }
+        #myModalgr table.dataTable thead .sorting:after, 
+        #myModalgr table.dataTable thead .sorting_asc:after, 
+        #myModalgr table.dataTable thead .sorting_desc:after, 
+        #myModalgr table.dataTable thead .sorting_asc_disabled:after, 
+        #myModalgr table.dataTable thead .sorting_desc_disabled:after{
+            bottom: 8px;
+            right: 0px;
+        }
+    </style>
+    <div id="header"></div>
+    <div class="publicpage" id="dataManagement">
+        <div class="current-page-title">
+            <h3>五小件数据统计</h3>
+        </div>
+        <div class="search-condition">
+            <div class="search-head clearfix">
+                <div class="search-condition-title">
+                    <i class="glyphicon glyphicon-th-list"></i>
+                    <span>查询条件</span>
+                </div>
+            </div>
+            <div class="search-content">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>设备名称:</label>
+                            <select class="form-control" id="deviceName">
+                                <!--<option value="all">全部</option>--> 
+                             
+                                <option value="1">车载视频</option>
+                                <option value="4">警务通</option>
+                                <option value="2">对讲机</option>
+                                <option value="3">拦截仪</option>
+                                <option value="5">执法记录仪</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>所属大队:</label>
+                            <select class="form-control" id="brigadeselect">
+                                <option value="all">全部</option>
+                             
+                    
+                                
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>所属中队:</label>
+                            <select class="form-control"  id="squadronselect">
+                                <option value="all">全部</option>
+                              
+                              
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>设备状态:</label>
+                            <select class="form-control" id="alarmType">
+                                <option value="all">全部</option>
+                                <option value="0">正常</option>
+                                <option value="1">告警</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="form-group" id="date1">
+                    <label>统计时间:</label>
+                    <div class="input-group date" id="start-data" >
+                        <input type="text" class="form-control start_form_datetime">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </div>
+                    <span>-</span>
+                    <div class="input-group date" id="end-data">
+                        <input type="text" class="form-control end_form_datetime">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="..." data-toggle="tooltip"   title="1" style="margin-left: 20px;">
+                        <button type="button" class="btn btn-default ">日</button>
+                        <button type="button" class="btn btn-default btngroupactive">周</button>
+                        <button type="button" class="btn btn-default">月</button>
+                        <button type="button" class="btn btn-default">季</button>
+                        <button type="button" class="btn btn-default">年</button>
+                        <button type="button" class="btn btn-default">自定义</button>
+                    </div>
+                    <div class="cell-button bt2 shishi" style="border-radius: 5px; background-color: #66B21E; display: inline-block; margin-left: 10px; height: 30px; width: 60px; line-height: 30px; text-align: center; color: white; " id="cz-bianji">查看</div><div class="cell-button bt2 shishi" style="border-radius: 5px; background-color: #66B21E; display: inline-block; margin-left: 10px; height: 30px; width: 100px; line-height: 30px; text-align: center; color: white; " id="cz-all">查看全部详情</div>
+                </div>
+            </div>
+        </div>
+        <div class="search-result">
+            <div class="search-head clearfix">
+                <div class="search-condition-title">
+                    <i class="glyphicon glyphicon-th-list"></i>
+                    <span>查询结果</span>
+                </div>
+                <div class="seach-box">
+                    <div class="input-group">
+                        <input type="text" class="form-control searchText" placeholder="请输入设备/车辆/联系人信息">
+                        <span class="input-group-btn toSearchText">
+                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive" style="overflow-x:hidden">
+                <div class="table-scroll">
+                    <div class="progress progress-striped active" style="width:80%;margin:0 auto;">
+    <div class="floot-zhbar progress-bar progress-bar-success" role="progressbar"
+         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+         style="width: 100%;"></div>
+                    </div>
+    <table class="table table-striped dataTables-example" id="search-result-table">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>大队</th>
+                <th>中队</th>
+            
+                <th>设备总数(台)</th>
+                <th>车辆号码</th>
+                <th>联系人</th>
+                <th>在线时长(小时)</th>
+                <th>设备状态</th>
+                <th>预警总数</th>
+                <th>统计日期</th>
+                <th>操作</th>
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+
+</div>
+            </div>
+        
+                <div class="search-result-flooterleft" >
+                    <label>统计周期:<span>0台</span></label>
+                    <label style="float:right;"><span></span></label>
+                </div>
+               
+        </div>
+       
+    </div>
+    <!--查看中队详情-->
+    <div class="modal fade custom-modal" id="myModaltxzs" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="max-width:1070px;width:100%;">
+            <div class="modal-content" style="max-width: 1070px; width: 100%;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModaltxzsLabel">数据统计—中队汇总</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="txbox">
+                        <table class="table table-striped dataTables-example" id="detail-result-table" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>大队</th>
+                                    <th>中队</th>
+
+                                    <th>设备总数(台)</th>
+                                    <th>总在线时长(小时)</th>
+                                    <th>设备状态</th>
+                                    <th>预警总数</th>
+                                    <th>统计日期</th>
+                                    <th>操作</th>
+
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="search-result-flooterleft" style="margin-left:30px;width:930px">
+                    <label>统计周期:<span>0台</span></label>
+                    <label style="float:right;"><span></span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--查看个人详情-->
+    <div class="modal fade custom-modal" id="myModalgr" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="max-width:760px;width:100%;">
+            <div class="modal-content" style="max-width:760px;width:100%;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModaltxzsLabel">数据统计—设备详情</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="txbox">
+                        <table class="table table-striped dataTables-example" id="detailgr-result-table" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>大队</th>
+                                    <th>中队</th>
+                                    <th>设备编号</th>
+                                    <th>车辆号码</th>
+                                    <th>联系人</th>
+                                    <th>在线时长(小时)</th>
+                                    <th>设备状态</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="search-result-flooterleft" style="margin-left:30px;width:640px">
+                    <label>统计周期:<span>0台</span></label>
+                    <label style="float:right;"><span></span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="../comjs/jquery.js"></script>
+    <script src="../comjs/bootstrap.min.js"></script>
+    <script src="../comjs/jquery.cookie.js"></script>
+    <script src="../comjs/bootstrap-datetimepicker.js"></script>
+    <script src="../comjs/highchart.js"></script>
+
+    <script src="dataManagement.js"></script>
+
+    <script src="../comjs/datatables.min.js"></script>
+  
+    <script>
+        $("#header").load('Header.aspx', function () {
+
+            //实时状态下拉列表监听
+            $("#one-menu").on("click", function () {
+                if ($("#sjzt_systemSettings-menu").is(":hidden")) {
+                    $("#sjzt_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                }
+                $("#one-menu").parent().on("mouseleave", function () {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                });
+            });
+
+            //系统设置下拉列表监听
+            $("#two-menu").on("click", function () {
+                if ($("#two_systemSettings-menu").is(":hidden")) {
+                    $("#two_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#two_systemSettings-menu").slideUp(500);
+                }
+            });
+
+            $("#two-menu").parent().on("mouseleave", function () {
+                $("#two_systemSettings-menu").slideUp(500);
+            });
+            $("#header .nav .nav-menu ul li").eq(4).addClass("active");
+   
+           
+        });
+        function bannertype(e) {
+
+            $.cookie("bannertype", e);
+            window.location.href = "index.html";
+        }
+     
+    </script>
+</body>
+</html>

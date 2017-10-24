@@ -1,0 +1,16 @@
+E:\工作\五小件\TaizhouPolice\TaizhouPolice\bin\TaizhouPolice.dll.config
+E:\工作\五小件\TaizhouPolice\TaizhouPolice\bin\TaizhouPolice.dll
+E:\工作\五小件\TaizhouPolice\TaizhouPolice\bin\TaizhouPolice.pdb
+E:\工作\五小件\TaizhouPolice\TaizhouPolice\obj\Debug\TaizhouPolice.dll
+E:\工作\五小件\TaizhouPolice\TaizhouPolice\obj\Debug\TaizhouPolice.pdb
+E:\项目\五小件\TaizhouPolice\TaizhouPolice\bin\TaizhouPolice.dll.config
+E:\项目\五小件\TaizhouPolice\TaizhouPolice\bin\TaizhouPolice.dll
+E:\项目\五小件\TaizhouPolice\TaizhouPolice\bin\TaizhouPolice.pdb
+E:\项目\五小件\TaizhouPolice\TaizhouPolice\obj\Debug\TaizhouPolice.csprojResolveAssemblyReference.cache
+E:\项目\五小件\TaizhouPolice\TaizhouPolice\obj\Debug\TaizhouPolice.dll
+E:\项目\五小件\TaizhouPolice\TaizhouPolice\obj\Debug\TaizhouPolice.pdb
+E:\工作\五小件\TaizhouPolice\TaizhouPolice\obj\Debug\TaizhouPolice.csprojResolveAssemblyReference.cache
+E:\工作\五小件\TaizhouPolice\TaizhouPolice\bin\DbComponet.dll
+E:\工作\五小件\TaizhouPolice\TaizhouPolice\bin\DbComponet.pdb
+E:\项目\五小件\TaizhouPolice\TaizhouPolice\bin\DbComponet.dll
+E:\项目\五小件\TaizhouPolice\TaizhouPolice\bin\DbComponet.pdb

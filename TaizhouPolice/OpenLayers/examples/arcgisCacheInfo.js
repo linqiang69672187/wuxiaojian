@@ -1,0 +1,9 @@
+var proj='EPSG:3857';
+var imageType='jpg';
+var mapResolutions = [131072,65536,32768,16384,8192,4096,2048,1024,512,256,128,64,32,16];
+var resolutionIndex = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+var tileSize = new OpenLayers.Size(256,256);
+var agsTileOrigin = new OpenLayers.LonLat(-33554432,33554432.0000001);
+var mapExtent = new OpenLayers.Bounds(13391341.8959478,3249734.05596603,13579446.788503,3419750.43161345);
+var baseUrl = '../../v101/Layers/_alllayers/';
+var pointsStr='';

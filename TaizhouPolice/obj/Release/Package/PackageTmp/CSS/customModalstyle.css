@@ -1,0 +1,565 @@
+﻿.custom-modal .modal-header{
+  height: 40px;
+  background-color: #005EB8;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 4px 4px 0px 0px;
+}
+.custom-modal .modal-header h4{
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 40px;
+}
+.custom-modal .modal-header .close{
+  color: #fff;
+  opacity: 1.0;
+  margin-top: 7px;
+}
+.custom-modal .modal-body{
+  padding: 20px;
+}
+.custom-modal .modal-footer{
+  border-top: transparent;
+  padding-top: 0px;
+  text-align: center;
+}
+//.custom-modal .modal-footer button{
+//  margin-top: 0px;
+//  width: 70px;
+//}
+//.custom-modal .modal-footer button.btn-qr{
+//  color: #fff;
+//  background-color: #0E9AEF;
+//  border-color: #0E9AEF
+//}
+//.custom-modal .modal-footer button.btn-qr:hover{
+//  border-color: #0E9AEF;
+//}
+//.custom-modal .modal-footer button.btn-qx{
+//  background-color: #9C9C9C;
+//  border-color:  #9C9C9C;
+//}
+//.custom-modal .modal-footer button.btn-qx:hover{
+//  border-color:  #9C9C9C;
+//}
+//告警设置 #setAlarmInforModle, #setAlarmInforModle2 {
+}
+  .modal-content{
+    width: 600px;
+  }
+  .modal-content .modal-body .modal-title{
+    border-bottom: 1px solid #E2E3E5;
+  }
+  .modal-content .modal-body .modal-title p{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #666666;
+  }
+  .modal-content .modal-body .set-param{
+    margin-top: 16px;
+    border: 1px solid #E2E3E5;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .modal-content .modal-body .set-param .table th{
+    font-size: 14px;
+    font-weight: bold;
+    color: #999999 ;
+  }
+  .modal-content .modal-body .set-param .table th:nth-child(2){
+    text-align: center;
+  }
+  .modal-content .modal-body .set-param .table th:nth-child(3){
+    text-align: right;
+    padding-right: 18px;
+  }
+  .modal-content .modal-body .set-param .table td{
+    height: 30px;
+    vertical-align: middle;
+  }
+  .modal-content .modal-body .set-param .table td label{
+    font-size: 14px;
+    font-weight: normal;
+    color: #666666;
+    margin-right: 30px;
+    margin-bottom: 0px;
+  }
+  .modal-content .modal-body .set-param .table td .input-group{
+    display: inline-block;
+    width: 150px;
+  }
+  .modal-content .modal-body .set-param .table td  select{
+    width: 44px;
+    height: 22px;
+    display: inline-block;
+    padding: 0px;
+    vertical-align: bottom;
+    margin-right: 10px;
+  }
+  .modal-content .modal-body .set-param .table td input{
+    display: inline-block;
+    width: 54px;
+    height: 22px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  .modal-content .modal-body .set-param .table td span{
+    font-size: 14px;
+    font-weight: normal;
+    color: #666666;
+  }
+  .modal-content .modal-body .set-param .table td:nth-child(2){
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666666;
+  }
+  .modal-content .modal-body .set-param .table td:nth-child(3) input{
+    margin-left: 30px;
+  }
+  .modal-content .modal-body .set-param .table td:nth-child(3){
+    text-align: right;
+  }
+  .modal-content .modal-footer  .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+  .modal-content .modal-footer  .btn-reset{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color:#9C9C9C;
+    border-color: #9C9C9C;
+    color: #ffffff;
+  }
+
+//批量删除的为空时弹窗 #deleModeNo {
+}
+  .modal-dialog{
+    width: 300px;
+  }
+  .modal-dialog .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+  }
+
+ #setdeviceModle {
+}
+  .modal-dialog{
+    width: 540px;
+  }
+  .modal-dialog .modal-body .set-param{
+    border:1px solid #CCCCCC;
+    border-radius: 4px;
+  }
+  .modal-dialog .modal-body .set-param .table{
+    margin-bottom: 0px;
+  }
+  .modal-dialog .modal-body .set-param .table th{
+    height: 30px;
+    background-color: #F5F5F5;
+    color: #333333;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .modal-dialog .modal-body .set-param .table tr:nth-child(odd){
+    background-color: #FFFFFF;
+  }
+  .modal-dialog .modal-body .set-param .table tr:nth-child(even){
+    background-color: #E6EFFF;
+  }
+  .modal-dialog .modal-body .set-param .table td{
+    height: 40px;
+    font-size: 14px;
+    color: #666666;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .modal-title select{
+      width:103px;
+
+  }
+编辑设备弹窗 #editDeviceModle {
+}
+  .modal-dialog{
+    width: 420px;
+  }
+  .modal-dialog .modal-body{
+    padding-bottom: 10px;
+  }
+  .modal-dialog .modal-body .form-infor{
+    width: 300px;
+    margin: 0px auto;
+  }
+  .modal-dialog .modal-body .form-infor .form-group label{
+    width: 70px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 4px;
+  }
+  .modal-dialog .modal-body .form-infor .form-group input{
+    display:inline-block;
+    width: 220px;
+  }
+  .modal-content .modal-footer  .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+  .modal-content .modal-footer  .btn-reset{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color:#9C9C9C;
+    border-color: #9C9C9C;
+    color: #ffffff;
+  }
+  #VerificationCode-error{
+    width: 100%;
+    text-align: left;
+    margin-left: 75px;
+  }
+  .modal-dialog .modal-body .form-infor .form-group label.error{
+    font-size: 12px;
+    font-weight: normal;
+    color: #A94442;
+    display: inline-block;
+    margin-left: 5px;
+    width: 100%;
+  }
+  .input_danger{
+    border: 1px solid  #A94442;
+
+  }
+
+ #addDeviceModle {
+}
+  .modal-dialog{
+    width: 420px;
+  }
+  .modal-dialog .modal-body{
+    padding-bottom: 10px;
+  }
+  .modal-dialog .modal-body .form-infor{
+    width: 300px;
+    margin: 0px auto;
+  }
+  .modal-dialog .modal-body .form-infor .form-group label{
+    width: 70px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 4px;
+  }
+  .modal-dialog .modal-body .form-infor .form-group input{
+    display:inline-block;
+    width: 220px;
+  }
+  .modal-content .modal-footer  .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+  .modal-content .modal-footer  .btn-reset{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color:#9C9C9C;
+    border-color: #9C9C9C;
+    color: #ffffff;
+  }
+  #VerificationCode-error{
+    width: 100%;
+    text-align: left;
+    margin-left: 75px;
+  }
+  .modal-dialog .modal-body .form-infor .form-group label.error{
+    font-size: 12px;
+    font-weight: normal;
+    color: #A94442;
+    display: inline-block;
+    margin-left: 5px;
+    width: 100%;
+  }
+  .input_danger{
+    border: 1px solid  #A94442;
+
+  }
+
+//删除设备 #deletDeviceModle {
+}
+  .modal-dialog{
+    width: 300px;
+  }
+  .modal-dialog .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+  }
+  .modal-content .modal-footer  .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+  .modal-content .modal-footer  .btn-qx{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-color: #888888;
+    color: #333333;
+  }
+}
+//编辑用户弹窗 #editUserModle {
+}
+  .modal-dialog{
+    width: 420px;
+  }
+  .modal-dialog .modal-body{
+    padding-bottom: 10px;
+  }
+  .modal-dialog .modal-body .form-infor{
+    width: 300px;
+    margin: 0px auto;
+  }
+  .modal-dialog .modal-body .form-infor .form-group label{
+    width: 70px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 4px;
+  }
+  .modal-dialog .modal-body .form-infor .form-group input{
+    display:inline-block;
+    width: 220px;
+  }
+  .modal-content .modal-footer  .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+  .modal-content .modal-footer  .btn-reset{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color:#9C9C9C;
+    border-color: #9C9C9C;
+    color: #ffffff;
+  }
+  #VerificationCode-error{
+    width: 100%;
+    text-align: left;
+    margin-left: 75px;
+  }
+  .modal-dialog .modal-body .form-infor .form-group label.error{
+    font-size: 12px;
+    font-weight: normal;
+    color: #A94442;
+    display: inline-block;
+    margin-left: 5px;
+    width: 100%;
+  }
+  .input_danger{
+    border: 1px solid  #A94442;
+
+  }
+}
+//删除用户 #deletUserModle {
+}
+  .modal-dialog{
+    width: 300px;
+  }
+  .modal-dialog .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+  }
+  .modal-content .modal-footer  .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+  .modal-content .modal-footer  .btn-qx{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-color: #888888;
+    color: #333333;
+  }
+}
+//新增用户弹窗 #addUserModle {
+}
+  .modal-dialog{
+    width: 600px;
+  }
+  .modal-dialog .modal-body{
+    padding-bottom: 10px;
+  }
+  .modal-dialog .modal-body .form-infor{
+    width: 300px;
+    margin: 0px auto;
+  }
+  .modal-dialog .modal-body .form-infor .form-group label{
+    width: 70px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 4px;
+  }
+  .modal-dialog .modal-body .form-infor .form-group input{
+    display:inline-block;
+    width: 220px;
+  }
+  .modal-content .modal-footer  .btn-qr{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color: #005EB8;
+    border-color: #005EB8;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+  .modal-content .modal-footer  .btn-qx{
+    width: 70px;
+    height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    background-color:#9C9C9C;
+    border-color: #9C9C9C;
+    color: #ffffff;
+  }
+  #VerificationCode-error{
+    width: 100%;
+    text-align: left;
+    margin-left: 75px;
+  }
+  .modal-dialog .modal-body .form-infor .form-group label.error{
+    font-size: 12px;
+    font-weight: normal;
+    color: #A94442;
+    display: inline-block;
+    margin-left: 5px;
+    width: 100%;
+  }
+  .input_danger{
+    border: 1px solid  #A94442;
+
+  }
+  .highcharts-legend-box{
+      visibility:hidden;
+  }
+  .dt-buttons{
+    position:absolute ! important;
+    bottom:2px;
+    height: 40px;
+    background-color: #F5F5F5;
+    max-width: 1598px;
+    width: 100%;
+    margin: auto;
+    border-top: 1px solid #cccccc;
+   border-bottom: 1px solid #cccccc;
+   text-align:right;
+   padding:10px;
+  }
+  .buttons-excel,.buttons-print{
+    float:right !important;
+  background-color: #66B21E;
+  color:#fff;
+  margin-top: -8px;
+  margin-right:5px;
+  }
+  .search-result-flooterleft{
+    position:absolute ! important;
+    bottom:2px;
+    height: 40px;
+    padding:13px 5px;
+    font-size: 14px;
+    font-weight: normal;
+    vertical-align: middle;
+    color: #005EB8
+  }
+  body{
+      overflow:hidden;
+  }
+ .modal-dialog{
+    top:100px;
+  }
+ #detail-result-table_wrapper,#detailgr-result-table_wrapper{
+     height:420px;
+ }
+ #detail-result-table_wrapper .dt-buttons{
+     width:1028px !important;
+ }
+  #detailgr-result-table_wrapper .dt-buttons{
+     width:728px !important;
+ }
+  #detail-result-table_paginate{
+      text-align:center;
+  }
+  .dataTables-example{
+     font-size:14px !important; 
+  }
+  /*.dataTable tbody td{
+      text-align:left;
+  }*/

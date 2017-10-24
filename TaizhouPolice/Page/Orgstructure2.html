@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五小件管理平台</title>
+</head>
+
+<body>
+    <link href="../Static_Seed_Project/css/bootstrap.min.css" rel="stylesheet">
+
+  
+
+   
+
+    <link href="../CSS/orgstructure2.css" rel="stylesheet" />
+    <link href="../CSS/orgchartstyle1.css" rel="stylesheet" />
+    <div id="header">
+
+    </div>
+    <div id="box">
+        <div id="orgstructure2" class="publicpage" style="max-width: 1600px; margin: 20px auto 0px;">
+            <div style="margin-right: 0px;">
+                <div style="float: left;width:calc(100% - 520px);">
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="Orgstructure.html" id="zz">组织树架构</a></li>
+                            <li role="presentation" class="active"><a data-toggle="tab">列表架构</a></li>
+                        </ul>
+                    </div>
+                    <div id="leftbox">
+                        <div class="brigadebox">
+                            <div class="brigadtitle">
+                                <p>台州市</p>
+                            </div>
+                            <div class="sbdropdown">
+                                <p>选择单位</p>
+                                <!--<p>设备名称:<span>全部</span><i class="glyphicon glyphicon-chevron-down"></i></p>-->
+
+                            </div>
+                            <ul class="brigadeul"></ul>
+                        </div>
+                        <div class="squadronbox">
+                            <ul class="squadronul"></ul>
+                        </div>
+                        <div class="contactsbox">
+                            <ul class="contactsul">
+
+
+
+                                <!--<li>
+                                    <span>警员3</span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+
+                                        </div>
+                                    </div>
+                                </li>-->
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="width:510px;float:right;">
+                    <div class="devices-table">
+                        <div class="search-box">
+                            <div class="input-group">
+                                <input type="text" id="contacts-name" class="form-control" placeholder="请输入联系人姓名">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default search-btn" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="devices-table-head">
+                            <p class="table-head-title">设备列表</p>
+                            <div class="arrow-icon"></div>
+                        </div>
+                        <div class="devices-table-content">
+                            <div class="left-content">
+                                <div class="wrap">
+                                    <img class="selected-avatar" src="../img/policeman-avatar.png">
+                                    <p class="selected-name"> </p>
+                                </div>
+                            </div>
+                            <div class="right-content">
+                                <!--1个	{{#with gzsbsl}}-->
+                                <!--1个cell-->
+                                <div class="cell" id="czspdiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/police-car.png">
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">车载视频</div>
+                                        <div class="cell-device-count">0</div>
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <div class="cell-button bt1" id="cz-shishi">实时状态</div>
+                                            <div class="cell-button bt2" id="cz-bianji">编辑</div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <div class="cell-button bt3">数据统计</div>
+                                    </div>
+                                </div>
+                                <!--1个cell-->
+                                <div class="cell bgg" id="djjdiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/two-way-radio.png">
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">对讲机</div>
+                                        <div class="cell-device-count">0</div>
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <div class="cell-button bt1" id="djj-shishi">实时状态</div>
+                                            <div class="cell-button bt2" id="djj-bianji">编辑</div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <div class="cell-button bt3" id="djj-shuju">数据统计</div>
+                                    </div>
+                                </div>
+
+                                <!--1个cell-->
+                                <div class="cell" id="ljydiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/interceptor.png">
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">拦截仪</div>
+                                        <div class="cell-device-count">0</div>
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <div class="cell-button bt1" id="ljy-shishi">实时状态</div>
+                                            <div class="cell-button bt2" id="ljy-bianji">编辑</div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <div class="cell-button bt3" id="ljy-shuju">数据统计</div>
+                                    </div>
+                                </div>
+                                <!--1个cell-->
+                                <div class="cell bgg" id="jwtdiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/jingwutong.png">
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">警务通</div>
+                                        <div class="cell-device-count">0</div>
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <div class="cell-button bt1" id="jwt-shishi">实时状态</div>
+                                            <div class="cell-button bt2" id="jwt-bianji">编辑</div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <div class="cell-button bt3" id="jwt-shuju">数据统计</div>
+                                    </div>
+                                </div>
+                                <!--1个cell-->
+                                <div class="cell" id="zfjlydiv">
+                                    <div class="cell-device-img-wrap">
+                                        <img class="cell-device-img" src="../img/ser.png">
+                                    </div>
+                                    <div class="cell-col col-center">
+                                        <div class="cell-device-name">执法记录仪</div>
+                                        <div class="cell-device-count">0</div>
+                                    </div>
+                                    <div class="cell-col">
+                                        <div class="cell-row">
+                                            <div class="cell-button bt1" id="jly-shishi">实时状态</div>
+                                            <div class="cell-button bt2" id="jly-bianji">编辑</div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <div class="cell-button bt3 " id="jly-shuju">数据统计</div>
+                                    </div>
+                                </div>
+                                <!--1个	{{/with}}-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../comjs/Addcomjs.js"></script>
+    <script src="../comjs/jquery.cookie.js"></script>
+    <script src="Orgstructure2.js"></script>
+    <script>
+        $("#header").load('Header.aspx', function () {
+
+            //实时状态下拉列表监听
+            $("#one-menu").on("click", function () {
+                if ($("#sjzt_systemSettings-menu").is(":hidden")) {
+                    $("#sjzt_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                }
+                $("#one-menu").parent().on("mouseleave", function () {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                });
+            });
+
+            //系统设置下拉列表监听
+            $("#two-menu").on("click", function () {
+                if ($("#two_systemSettings-menu").is(":hidden")) {
+                    $("#two_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#two_systemSettings-menu").slideUp(500);
+                }
+            });
+
+            $("#two-menu").parent().on("mouseleave", function () {
+                $("#two_systemSettings-menu").slideUp(500);
+            });
+            $("#header .nav .nav-menu ul li").eq(0).addClass("active");
+
+
+        });
+        function bannertype(e) {
+
+            $.cookie("bannertype", e);
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

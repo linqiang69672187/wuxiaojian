@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/uploadify.css" type="text/css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Basic Demo</h2>
+        <div id="fileQueue"></div>
+        <input type="file" name="file_upload" id="upload" />
+        <img id="img" style="width: 300px; height:250px;" src="images/uploadImgs/no_img.jpg" alt="image" />
+    </div>
+    <hr>
+
+    <script src="../comjs/jquery.js"></script>
+    <!-- uploadify -->
+    <script src="../comjs/jquery.uploadify.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("#upload").uploadify({
+            swf: "../css/uploadify/uploadify.swf",
+            uploader: "../Handle/UploadHandler.ashx",
+            fileObjName: "uploadFile",  // 控制器中参数名称
+            auto: true,
+            fileSizeLimit: "1024KB",
+            fileTypeExts: "*.jpg;*.gif;*.png;",
+            onUploadSuccess: function (file, result, response) {
+                if (result) {
+                    // 设置图片路径
+                    $("#img").attr("src", result);
+                }
+                // 上传失败
+            }
+        });
+
+    });
+    </script>
+
+</body>
+</html> 

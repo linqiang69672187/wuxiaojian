@@ -1,0 +1,276 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五小件管理平台</title>
+</head>
+<body>
+    <link href="../Static_Seed_Project/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/merged-stylesheets.css" rel="stylesheet">
+
+ 
+
+
+    <link href="../CSS/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="../CSS/orgchartstyle1.css" rel="stylesheet" />
+
+    <link href="../CSS/orgstructure.css" rel="stylesheet" />
+
+
+
+    <link href="../CSS/Workanalysis.css" rel="stylesheet" />
+    <link href="../CSS/ol.css" rel="stylesheet" />
+    <link href="../CSS/ol3-layerswitcher.css" rel="stylesheet" />
+    <link href="../CSS/layerswitcher.css" rel="stylesheet" />
+
+    <link href="../CSS/index.css" rel="stylesheet" />
+    
+    <style>
+        #header {
+            position: absolute;
+            z-index: 999;
+        }
+    </style>
+
+   
+
+    <div id="header" >
+
+    </div>
+    <div id="index">
+        <div id="mapdraw">
+
+            <div id="popup"></div>
+            <div id="location"></div>
+        </div>
+        <div class="boxleft">
+            <div class="input-group seach-box" style="z-index:0;">
+                <input type="text" class="form-control " placeholder="请输入设备或车辆或联系人">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+            </div>
+            <div class="carVideo">
+                <div class="carVideo-title" style="border-bottom:1px solid #dddddd;">
+                    <p><label>车载视频</label><i class="glyphicon glyphicon-chevron-up" ></i></p>
+                </div>
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" style="margin:3;" role="tablist">
+                        <li role="presentation" class="active"><a href="#carvideoreallocation" role="tab" data-toggle="tab" id="sswz">实时位置</a></li>
+                        <li role="presentation" style="display:none"><a href="#carvideotrack" role="tab" data-toggle="tab" id="ckgi">查看轨迹</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="carvideoreallocation">
+                            <div class="carVideo-box" style="border: transparent;">
+                              
+                                <div class="form-group" id="team-group1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>所属大队</label>
+                                            <select class="form-control" id="brigadeselect1">
+                                                <option value="all">全部</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>所属中队</label>
+                                            <select class="form-control " id="squadronselect1" disabled="disabled">
+                           
+                                                <option value="all">全部</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="equipment-state1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>设备状态</label>
+                                            <select class="form-control" id="sbstate1">
+                                                <option value="all">全部</option>
+                                                <option value="1" selected="selected">在线</option>
+                                                <option value="0">离线</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>排列方式</label>
+                                            <select class="form-control" id="sortMode1">
+                                                <option value="de.EntityId">所属单位</option>
+                                                <option value="gps.OnlineTime">在线时长</option>
+                                                <option value="gps.IsOnline">状态</option>
+                                                <!--<option value="de.PlateNumber">所在车辆</option>-->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                           <div class="form-group" id="data_1" style="text-align:right;padding-right:10px">
+                                 
+                                     <div class="cell-button bt2 shishi" id="cz-bianji">查看</div>
+                               
+                             </div>
+
+                                <div class="classtablerespone table-responsive  tab-maxh1 ">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                               
+                                            </tr>
+                                        </thead>
+
+                                    </table>
+                                </div>
+                                    <div class="table-responsive tab-maxh tab-maxh1">
+                                        <table class="table">
+                                            <tbody>         
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-maxh-flooter">
+                                        <div class="equipmentNumb">
+                                            
+                                        </div>
+                                        <div class="onlineTotal-time">
+                                            <p>总在线时长:<span>0</span></p>
+                                        </div>
+                                        <div class="data-details">
+                                            <!--<button class="btn" id="ckTrajectory" >查看数据详情</button>-->
+                                        </div>
+                                    </div>
+
+                                </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="boxright">
+            <div class="data-statistics">
+                <div class="datastatisticstitle">
+                    <img src="./img/data1.png">
+                    <span>
+                        数据统计
+                    </span>
+                    <i class="glyphicon glyphicon-chevron-down"></i>
+                </div>
+                <div class="datastatistics-box">
+                    <div class="datastatistics-box-title">
+                        <p>车载数据视频统计</p>
+                    </div>
+                    <div id="datastatistics-box-draw">
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- Page contents -->
+        <div class="boxSlider">
+            <div class="boxSliderwidth">
+                <input type="text" id="range" value="" name="range" />
+            </div>
+        </div>
+       
+    </div>
+    <div  class="zq1" >
+        <div class="zq-tl1 clearfix">
+            <div class="zq-title1">设备信息<span class="close"><i class="glyphicon glyphicon-remove"></i></span></div>
+        </div>
+        <div class="zq-cwrap1" style="background-color:#fff">
+            <div class="row">
+                <div class="col-md-5"><span> 设备编号:</span></div>
+                <div class="col-md-7"><span></span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"><span> IMEI:</span></div>
+                <div class="col-md-7"><span></span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"><span> 警号:</span></div>
+                <div class="col-md-7"><span></span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"><span> 联系人:</span></div>
+                <div class="col-md-7"><span></span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"><span> 车牌号:</span></div>
+                <div class="col-md-7"><span></span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"><span>联系电话:</span></div>
+                <div class="col-md-7"><span>18605760004</span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"><span>所属单位:</span></div>
+                <div class="col-md-7"><span>城区1中队</span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"><span>人员身份:</span></div>
+                <div class="col-md-7"><span></span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"><span>设备状态:</span></div>
+                <div class="col-md-7"><span>离线</span></div>
+            </div>
+        </div>
+        <div class="zq-floot1" style="margin-top:-10px"><button class="btn weekly" style="visibility:hidden;">周报</button></div>
+        <div class="zq-bottom"></div>
+    </div>
+
+
+
+    <script src="../comjs/jquery.js"></script>
+    <script src="../comjs/jquery.cookie.js"></script>
+    <script src="../build/ol.js"></script>
+    <script src="../build/ol3-layerswitcher.js"></script>
+    <script src="../Ol/baidu.js"></script>
+    <script src="../Ol/mark.js"></script>
+    <script src="../Ol/vertor.js"></script>
+  
+    <script src="index.js"></script>
+
+    <script>
+        $("#header").load('Header.aspx', function () {
+
+            //实时状态下拉列表监听
+            $("#one-menu").on("click", function () {
+                if ($("#sjzt_systemSettings-menu").is(":hidden")) {
+                    $("#sjzt_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                }
+                $("#one-menu").parent().on("mouseleave", function () {
+                    $("#sjzt_systemSettings-menu").slideUp(500);
+                });
+            });
+
+            //系统设置下拉列表监听
+            $("#two-menu").on("click", function () {
+                if ($("#two_systemSettings-menu").is(":hidden")) {
+                    $("#two_systemSettings-menu").slideDown(500);
+                } else {
+                    $("#two_systemSettings-menu").slideUp(500);
+                }
+            });
+
+            $("#two-menu").parent().on("mouseleave", function () {
+                $("#two_systemSettings-menu").slideUp(500);
+            });
+          
+
+
+            $("#header .nav .nav-menu ul li").eq(2).addClass("active");
+           
+          
+
+            
+          
+        });
+        
+
+
+    </script>
+</body>
+</html>

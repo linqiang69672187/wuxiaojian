@@ -1,0 +1,61 @@
+﻿#deviceManagement {
+}
+  .edit-btn{
+    background-color: #66B21E;
+    border-color: #66B21E;
+    font-size: 14px;
+  }
+  .delet-btn{
+    background-color: #ffffff;
+    border-color: #888888;
+    color: #333333;
+    font-size: 14px;
+  }
+  #addDevice,#addDevicebtn{
+    background-color: #005EB8;
+    border-color: #005EB8;
+    font-size: 14px;
+  }
+  .file {
+        position: relative;
+        display: inline-block;
+        background: #D0EEFF;
+        border: 1px solid #99D3F5;
+        border-radius: 4px;
+        padding: 4px 12px;
+        overflow: hidden;
+        color: #1E88C7;
+        text-decoration: none;
+        text-indent: 0;
+        line-height: 20px;
+  }
+  .file input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+  }
+  .file:hover {
+        background: #AADFFD;
+        border-color: #78C3F3;
+        color: #004974;
+        text-decoration: none;
+  }
+#setdeviceModle td,#setdeviceModle th{
+   text-align:center;
+}
+.modal-content{
+    width:418px;
+}
+.table-responsive{
+overflow-x:hidden;
+}
+#search-result-table_paginate{
+    text-align:center;
+}
+
+#addDeviceModle .modal-dialog .modal-body .form-infor .form-group select {
+    display: inline-block;
+    width: 220px;
+}
