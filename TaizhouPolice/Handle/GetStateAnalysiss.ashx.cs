@@ -28,6 +28,8 @@ namespace TaizhouPolice.Handle
             string hbendtime = context.Request.Form["hbendtime"];
             string ssdd = context.Request.Form["ssdd"];
             string sszd = context.Request.Form["sszd"];
+            string tmpDevid = "";
+            int tmpRows = 0;
             //typetext: typetext, ssddtext: ssddtext, sszdtext: sszdtext,
            // endtime = "2017/9/14"; //测试使用
              string title ="" ;
@@ -168,13 +170,15 @@ namespace TaizhouPolice.Handle
                     Int64 在线时长 = 0;
                     Int64 视频大小 = 0;
                     int status = 0;//设备使用正常、周1次，月4次，季度12次
-                     var  rows= from p in Alarm_EveryDayInfo.AsEnumerable()
+                    var  rows= from p in Alarm_EveryDayInfo.AsEnumerable()
                                    where (p.Field<string>("ParentID") == dtEntity.Rows[i1]["ID"].ToString())
+                                   orderby p.Field<string>("DevId") 
                                    select p;
                  
                     
 
                     //获得设备数量，及正常使用设备
+                    tmpRows = 0;
                     foreach (var item in rows)
                     {
                        if (item["在线时长"] is  DBNull){}
@@ -194,6 +198,11 @@ namespace TaizhouPolice.Handle
                         allstatu_device += (Convert.ToInt32(item["在线时长"]) / statusvalue >= 1) ? 1 : 0;
                        }
 
+                       if (item["DevId"].ToString() != tmpDevid) 
+                       {
+                           tmpRows += 1;  //新设备ID不重复
+                           tmpDevid = item["DevId"].ToString();
+                       }
                     }
 
                     //或警员数量
@@ -215,7 +224,7 @@ namespace TaizhouPolice.Handle
                     }
 
 
-                    int countdevices =rows.Count();
+                    int countdevices = tmpRows;
 
                     double deviceuse = (double)status * 100 / (double)countdevices;
 

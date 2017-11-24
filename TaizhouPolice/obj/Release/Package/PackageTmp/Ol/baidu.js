@@ -1,4 +1,4 @@
-﻿// 自定义分辨率和瓦片坐标系
+// 自定义分辨率和瓦片坐标系11
 var resolutions = [];
 var maxZoom = 18;
 
@@ -85,10 +85,10 @@ var baiduMapLayer2 = new ol.layer.Tile({
 
 // 创建地图
 var map = new ol.Map({
-    layers: [ new ol.layer.Group({
+    layers: [new ol.layer.Group({
         'title': '基础图层',
         layers: [baiduMapLayer2]
-      })
+    })
     ],
     controls: ol.control.defaults({
         attribution: false
@@ -109,9 +109,9 @@ var map = new ol.Map({
 
 
 $(function () {
-   // setboxsize();
+    // setboxsize();
     setInterval("loadmarks()", 15000);
     loadmarks();
-   
+
 });
 

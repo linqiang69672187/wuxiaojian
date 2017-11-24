@@ -58,7 +58,7 @@ namespace TaizhouPolice.Handle.Orgchart
                     sqltext.Append("select da.ParentID,da.总数,da.AlarmState from (SELECT  en.ParentID,gp.AlarmState,COUNT(*) as 总数 FROM [Alarm_EveryDayInfo] as gp left join [Device] as de on gp.DevId = de.DevId  left join Entity as en on en.ID= de.EntityId where de.DevType = " + devtype + " and gp.AlarmType in (1,4) and  DATEDIFF(d,[AlarmDay],GETDATE()) = 1  group by en.ParentID,gp.AlarmState ) as da left join [JingWuTong].[dbo].Entity new on new.ID = da.ParentID ORDER BY   new.Sort");
                     break;
                 case "yjqs":
-                    sqltext.Append("select da.ParentID,da.总数,da.AlarmDay,da.告警数 from (SELECT  en.ParentID,gp.AlarmDay,sum(gp.AlarmState) as 告警数 ,COUNT(*) as 总数 FROM [Alarm_EveryDayInfo] as gp left join [Device] as de on gp.DevId = de.DevId  left join Entity as en on en.ID= de.EntityId where de.DevType = " + devtype + " and gp.AlarmType in (1,4)  and  gp.[AlarmDay] >='" + begintime + "' and gp.[AlarmDay] <='" + endtime + "'  group by en.ParentID,gp.AlarmDay ) as da left join [JingWuTong].[dbo].Entity new on new.ID = da.ParentID ORDER BY   new.Sort,da.ParentID");
+                    sqltext.Append("select da.ParentID,da.总数,da.AlarmDay,da.告警数 from (SELECT  en.ParentID,gp.AlarmDay,sum(gp.AlarmState) as 告警数 ,COUNT(*) as 总数 FROM [Alarm_EveryDayInfo] as gp left join [Device] as de on gp.DevId = de.DevId  left join Entity as en on en.ID= de.EntityId where de.DevType = " + devtype + " and gp.AlarmType in (1,4)  and  gp.[AlarmDay] >='" + begintime + "' and gp.[AlarmDay] <='" + endtime + "'  group by en.ParentID,gp.AlarmDay ) as da left join [JingWuTong].[dbo].Entity new on new.ID = da.ParentID ORDER BY   new.Sort,da.ParentID,da.AlarmDay");
                     break;
 
 
