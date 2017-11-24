@@ -8,3 +8,8 @@ E:\项目\五小件\TaizhouPolice\DbComponet\obj\Release\DbComponet.dll
 E:\项目\五小件\TaizhouPolice\DbComponet\obj\Release\DbComponet.pdb
 E:\项目\五小件\TaizhouPolice\DbComponet\bin\Release\GemBox.Spreadsheet.dll
 E:\工作\五小件\TaizhouPolice\DbComponet\bin\Release\GemBox.Spreadsheet.dll
+E:\工作\五小件\WEB\DbComponet\bin\Release\DbComponet.dll
+E:\工作\五小件\WEB\DbComponet\bin\Release\DbComponet.pdb
+E:\工作\五小件\WEB\DbComponet\bin\Release\GemBox.Spreadsheet.dll
+E:\工作\五小件\WEB\DbComponet\obj\Release\DbComponet.dll
+E:\工作\五小件\WEB\DbComponet\obj\Release\DbComponet.pdb
