@@ -193,16 +193,18 @@ namespace TaizhouPolice.Handle
                                 case "4":
                                     视频大小 += Convert.ToInt32(item["在线时长"]);
                                     break;
-                            }                         
-                        status += (Convert.ToInt32(item["在线时长"]) / statusvalue >= 1) ? 1 : 0;
-                        allstatu_device += (Convert.ToInt32(item["在线时长"]) / statusvalue >= 1) ? 1 : 0;
+                            }
+                            if (item["DevId"].ToString() != tmpDevid)
+                            {
+                                tmpRows += 1;  //新设备ID不重复
+                                tmpDevid = item["DevId"].ToString();
+                                status += (Convert.ToInt32(item["在线时长"]) / statusvalue >= 1) ? 1 : 0;
+                                allstatu_device += (Convert.ToInt32(item["在线时长"]) / statusvalue >= 1) ? 1 : 0;
+                            }
+                       
                        }
 
-                       if (item["DevId"].ToString() != tmpDevid) 
-                       {
-                           tmpRows += 1;  //新设备ID不重复
-                           tmpDevid = item["DevId"].ToString();
-                       }
+                       
                     }
 
                     //或警员数量
