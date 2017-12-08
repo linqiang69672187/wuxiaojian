@@ -152,7 +152,7 @@ namespace TaizhouPolice.Handle
                 else
                 {
                     ddtitle = context.Request.Form["sszdtext"];
-                    Alarm_EveryDayInfo = SQLHelper.ExecuteRead(CommandType.Text, "SELECT de.Contacts as ParentID ,al.[AlarmType],sum([Value]) as 在线时长 from [Alarm_EveryDayInfo] al left join [Device] de on de.[DevId] = al.[DevId]  where al.[AlarmType] in  (1,3,4) and  al.[AlarmDay ] >='" + begintime + "' and [AlarmDay ] <='" + endtime + "' and  de.[DevType]=" + type + "  and  de.[EntityId]=" + sszd + " group by de.[Contacts],de.[DevId],[AlarmType] ", "Alarm_EveryDayInfo");
+                    Alarm_EveryDayInfo = SQLHelper.ExecuteRead(CommandType.Text, "SELECT de.Contacts as ParentID ,al.[AlarmType],sum([Value]) as 在线时长,de.[DevId] from [Alarm_EveryDayInfo] al left join [Device] de on de.[DevId] = al.[DevId]  where al.[AlarmType] in  (1,3,4) and  al.[AlarmDay ] >='" + begintime + "' and [AlarmDay ] <='" + endtime + "' and  de.[DevType]=" + type + "  and  de.[EntityId]=" + sszd + " group by de.[Contacts],de.[DevId],[AlarmType] ", "Alarm_EveryDayInfo");
                  //   hbAlarm_EveryDayInfo = SQLHelper.ExecuteRead(CommandType.Text, "SELECT de.Contacts as ParentID ,sum([Value]) as 在线时长 from [Alarm_EveryDayInfo] al left join [Device] de on de.[DevId] = al.[DevId]  where al.[AlarmType] = 1 and  al.[AlarmDay ] >='" + hbbegintime + "' and [AlarmDay ] <='" + hbendtime + "' and de.[DevType]=" + type + " and  de.[EntityId]=" + sszd + " group by de.[Contacts],de.[DevId]", "Alarm_EveryDayInfo");
                     dtEntity = SQLHelper.ExecuteRead(CommandType.Text, "SELECT distinct [Contacts] as ID,' /' as Name  from [Device] where [EntityId] = " + sszd + " and [DevType]=" + type + "", "2");
 
