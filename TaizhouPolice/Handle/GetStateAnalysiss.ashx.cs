@@ -523,6 +523,8 @@ namespace TaizhouPolice.Handle
                     sheet.Rows[i + 2].Cells["F"].Value = dt.Rows[i][6].ToString();
                     sheet.Rows[i + 2].Cells["F"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                       }
+               sheet.Rows[dt.Rows.Count + 2].Cells[0].Value = "计算公式：设备使用率为 （设备使用数量/设备配发数 *100%），设备使用标准为查询时间段内时长大于10分钟  ";
+               sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 3).Merged = true;
                       break;
                   case "2":
                        sheet.Rows[0].Cells[0].Value = title + entityTitle + "对讲机在线时长报表";
@@ -564,6 +566,8 @@ namespace TaizhouPolice.Handle
                     sheet.Rows[i + 2].Cells["F"].Value = dt.Rows[i][6].ToString();
                     sheet.Rows[i + 2].Cells["F"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                       }
+                  sheet.Rows[dt.Rows.Count + 2].Cells[0].Value = "计算公式：设备使用率为 （设备使用数量/设备配发数 *100%），设备使用标准为查询时间段内时长大于10分钟  ";
+              sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 3).Merged = true;
                       break;
                   case "3":
                        sheet.Rows[0].Cells[0].Value = title + entityTitle + "拦截仪在线时长报表";
@@ -605,6 +609,8 @@ namespace TaizhouPolice.Handle
                     sheet.Rows[i + 2].Cells["F"].Value = dt.Rows[i][6].ToString();
                     sheet.Rows[i + 2].Cells["F"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                       }
+               sheet.Rows[dt.Rows.Count + 2].Cells[0].Value = "计算公式：设备使用率为 （设备使用数量/设备配发数 *100%），设备使用标准为查询时间段内时长大于10分钟  ";
+              sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 3).Merged = true;
                       break;
                  
                   case "4":
@@ -663,6 +669,8 @@ namespace TaizhouPolice.Handle
                           sheet.Rows[i + 3].Cells["P"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
                       }
+              sheet.Rows[dt.Rows.Count+3].Cells[0].Value = "计算公式：设备使用率为 （设备使用数量/设备配发数 *100%），设备使用标准为查询时间段内时长大于10分钟  ";
+              sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 3, 0, dt.Rows.Count + 3, dt.Columns.Count - 1).Merged = true;
                       break;
                   case "5":
                       sheet.Rows[0].Cells[0].Value = title + entityTitle + "执法记录仪在线时长报表";
@@ -716,13 +724,14 @@ namespace TaizhouPolice.Handle
                           sheet.Rows[i + 2].Cells["G"].Value = dt.Rows[i][6].ToString();
                           sheet.Rows[i + 2].Cells["G"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                       }
+                      sheet.Rows[dt.Rows.Count + 2].Cells[0].Value = "计算公式：设备使用率为 （设备使用数量/设备配发数 *100%），设备使用标准为查询时间段内视频时长大于10分钟  ";
+              sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 3).Merged = true;
                       break;
                   default:
 
                       break;
               }
-
-              //sheet.Cells.GetSubrangeAbsolute(0, 0, 0, columns.Count - 1).Merged = true;
+             
 
             //sheet.GetUsedCellRange(true).Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
             
