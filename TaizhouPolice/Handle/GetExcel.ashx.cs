@@ -1,4 +1,5 @@
 ﻿using DbComponent;
+using GemBox.Spreadsheet;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,6 +28,15 @@ namespace TaizhouPolice.Handle
             DataTable dtdevices = SQLHelper.ExecuteRead(CommandType.Text, "SELECT [DevId]  FROM  [Device] ", "devices"); //设备信息表
 
             DataTable errtb = new DataTable("Datas"); //错误信息记录表
+
+            ExcelFile excelFile = new ExcelFile();
+            var tmpath = HttpContext.Current.Server.MapPath("Upload\\数据导入模版.xls");
+            excelFile.LoadXls(tmpath);
+            ExcelWorksheet sheet = excelFile.Worksheets[0];
+            int errRows = 0; //错误行数
+
+
+
 
             errtb.Columns.Add("xuhao", Type.GetType("System.String"));
             errtb.Columns.Add("Description", Type.GetType("System.String"));
@@ -66,7 +76,15 @@ namespace TaizhouPolice.Handle
                 }
                 if (newRow["EntityId"].ToString() == "")
                 {
-                    errtb.Rows.Add(new object[] { "错误", "导入的EXCEL表第" + (i).ToString() + "行 [" + dt.Rows[i][0].ToString().TrimEnd() + "]单位机构代码不存在" }); 
+                    errtb.Rows.Add(new object[] { "错误", "导入的EXCEL表第" + (i).ToString() + "行 [" + dt.Rows[i][0].ToString().TrimEnd() + "]单位机构代码不存在" });
+                 
+                    for (int hcoloms = 0; hcoloms < 11; hcoloms++)
+                    {
+                        sheet.Rows[errRows + 1].Cells[hcoloms].Value = dt.Rows[i][hcoloms].ToString();
+                    }
+
+                    errRows += 1;
+
                 }
 
                 switch (dt.Rows[i][1].ToString().Trim())
@@ -88,6 +106,12 @@ namespace TaizhouPolice.Handle
                         break;
                     default :
                         errtb.Rows.Add(new object[] { "错误" , "导入的EXCEL第"+(i).ToString()+"行 ["+dt.Rows[i][1].ToString().TrimEnd() + "]该设备类型不存在" }); 
+                        for (int hcoloms = 0; hcoloms < 11; hcoloms++)
+                       {
+                        sheet.Rows[errRows + 1].Cells[hcoloms].Value = dt.Rows[i][hcoloms].ToString();
+                        }
+
+                       errRows += 1;
                         break;
                 }
 
@@ -125,6 +149,9 @@ namespace TaizhouPolice.Handle
             if (errtb.Rows.Count > 0)
             {
                 context.Response.Write(JSON.DatatableToDatatableJS(errtb, ""));
+                tmpath = HttpContext.Current.Server.MapPath("upload\\导入失败列表.xls");
+
+                excelFile.SaveXls(tmpath);
             }
             else
             {
@@ -169,6 +196,8 @@ namespace TaizhouPolice.Handle
 
                 rtb.Rows.Add(new object[] {  "新增", "成功导入合计：" + addcount+"条" });
                 rtb.Rows.Add(new object[] { "更新", "成功导入合计：" + updatecount + "条" });
+
+
 
                 context.Response.Write(JSON.DatatableToDatatableJS(rtb, ""));
 
