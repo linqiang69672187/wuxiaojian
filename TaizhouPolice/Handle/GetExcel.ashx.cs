@@ -147,6 +147,13 @@ namespace TaizhouPolice.Handle
 
             }
 
+            if (errRows > 0)
+            {
+                context.Response.Write(JSON.DatatableToDatatableJS(errtb, "error"));
+                tmpath = HttpContext.Current.Server.MapPath("upload\\导入失败列表.xls");
+                excelFile.SaveXls(tmpath);
+                return;
+            }
           
                 string sbSQL;
                 int updatecount = 0;
@@ -186,18 +193,8 @@ namespace TaizhouPolice.Handle
 
                 errtb.Rows.Add(new object[] { "新增", "成功导入合计：" + addcount + "条" });
                 errtb.Rows.Add(new object[] { "更新", "成功导入合计：" + updatecount + "条" });
+                context.Response.Write(JSON.DatatableToDatatableJS(errtb, "success"));
 
-
-                if (errRows > 0)
-                {
-                    context.Response.Write(JSON.DatatableToDatatableJS(errtb, "error"));
-                    tmpath = HttpContext.Current.Server.MapPath("upload\\导入失败列表.xls");
-                    excelFile.SaveXls(tmpath);
-                }
-               else{
-                   context.Response.Write(JSON.DatatableToDatatableJS(errtb, "success"));
-                
-                }
          
 
 
