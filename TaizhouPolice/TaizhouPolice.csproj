@@ -412,6 +412,7 @@
     <Content Include="Handle\templet\数据管理\51.xls" />
     <Content Include="Handle\Upload\sjtj\数据导入模版.xls" />
     <Content Include="log4net.config" />
+    <Content Include="Handle\Upload\导入失败列表.xls" />
     <None Include="Properties\PublishProfiles\五小件.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

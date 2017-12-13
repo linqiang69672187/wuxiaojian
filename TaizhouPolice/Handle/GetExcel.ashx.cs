@@ -30,7 +30,7 @@ namespace TaizhouPolice.Handle
             DataTable errtb = new DataTable("Datas"); //错误信息记录表
 
             ExcelFile excelFile = new ExcelFile();
-            var tmpath = HttpContext.Current.Server.MapPath("Upload\\数据导入模版.xls");
+            var tmpath = HttpContext.Current.Server.MapPath("Upload\\导入错误模版.xls");
             excelFile.LoadXls(tmpath);
             ExcelWorksheet sheet = excelFile.Worksheets[0];
             int errRows = 0; //错误行数
@@ -82,9 +82,9 @@ namespace TaizhouPolice.Handle
                     {
                         sheet.Rows[errRows + 1].Cells[hcoloms].Value = dt.Rows[i][hcoloms].ToString();
                     }
-
+                    sheet.Rows[errRows + 1].Cells[11].Value =  "单位机构代码不存在";
                     errRows += 1;
-
+                    continue;
                 }
 
                 switch (dt.Rows[i][1].ToString().Trim())
@@ -110,9 +110,10 @@ namespace TaizhouPolice.Handle
                        {
                         sheet.Rows[errRows + 1].Cells[hcoloms].Value = dt.Rows[i][hcoloms].ToString();
                         }
-
+                        sheet.Rows[errRows + 1].Cells[11].Value = "该设备类型不存在";
                        errRows += 1;
-                        break;
+                       continue;
+                   
                 }
 
                 newRow["bz"] = "add"; //新增还是修改
@@ -146,15 +147,7 @@ namespace TaizhouPolice.Handle
 
             }
 
-            if (errtb.Rows.Count > 0)
-            {
-                context.Response.Write(JSON.DatatableToDatatableJS(errtb, ""));
-                tmpath = HttpContext.Current.Server.MapPath("upload\\导入失败列表.xls");
-
-                excelFile.SaveXls(tmpath);
-            }
-            else
-            {
+          
                 string sbSQL;
                 int updatecount = 0;
                 int addcount = 0;
@@ -189,21 +182,23 @@ namespace TaizhouPolice.Handle
                     sp = null;
                 }
 
-                DataTable rtb = new DataTable("Datas"); //新增及更新统计表
-   
-                rtb.Columns.Add("xuhao", Type.GetType("System.String"));
-                rtb.Columns.Add("Description", Type.GetType("System.String"));
+              
 
-                rtb.Rows.Add(new object[] {  "新增", "成功导入合计：" + addcount+"条" });
-                rtb.Rows.Add(new object[] { "更新", "成功导入合计：" + updatecount + "条" });
+                errtb.Rows.Add(new object[] { "新增", "成功导入合计：" + addcount + "条" });
+                errtb.Rows.Add(new object[] { "更新", "成功导入合计：" + updatecount + "条" });
 
 
-
-                context.Response.Write(JSON.DatatableToDatatableJS(rtb, ""));
-
-
-            }
-
+                if (errRows > 0)
+                {
+                    context.Response.Write(JSON.DatatableToDatatableJS(errtb, "error"));
+                    tmpath = HttpContext.Current.Server.MapPath("upload\\导入失败列表.xls");
+                    excelFile.SaveXls(tmpath);
+                }
+               else{
+                   context.Response.Write(JSON.DatatableToDatatableJS(errtb, "success"));
+                
+                }
+         
 
 
 

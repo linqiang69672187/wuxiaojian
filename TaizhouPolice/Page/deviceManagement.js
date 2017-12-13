@@ -769,7 +769,13 @@ function createErrDataTable() {
         // console.log( 'Redraw occurred at: '+new Date().getTime() );
     })
     .on('xhr.dt', function (e, settings, json, xhr) {
-    $("#errModal").modal("show");
+        $("#errModal").modal("show");
+        if (json.title == "error") {
+            $("#errEXCEL").show();
+        }
+        else {
+            $("#errEXCEL").hide();
+        }
      var height = ($(window).height());
         if (height < 800) {
             var tableH = height - 350;
