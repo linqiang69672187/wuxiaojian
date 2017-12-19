@@ -696,7 +696,7 @@ $(function () {
         var columns = [
                              { "data": "序号", "orderable": false },
                              { "data": null, "orderable": false },
-                             { "data": "所属中队", "orderable": false },
+                             { "data": "所属中队", visible: false },
                              { "data": "警员人数" },
                              { "data": "设备配发数" },
                              { "data": "在线时长" },
@@ -724,17 +724,27 @@ $(function () {
                              }
 
                          }
-                         else
+                         if ($("#squadronselect").val() == "all")
                          {
                          
-                             return $("#brigadeselect").find("option:selected").text();
+                             if (d.row == 0) {
+                                 return $("#brigadeselect").find("option:selected").text()
+                             }
+                             return   c.所属中队;;
                             
 
                          }
+
+                         if (d.row == 0) {
+                             return $("#squadronselect").find("option:selected").text()
+                         }
+                         return c.警员人数;;
                         
 
                      }
-                 }, {
+                 }
+                 /**
+                 , {
                      targets: 2,
                      render: function (a, b, c, d) {
                        
@@ -748,6 +758,20 @@ $(function () {
                         
                      }
                  }
+                 **/
+           , {
+         targets: 3,
+           render: function (a, b, c, d) {
+               if (d.row > 0 && $("#squadronselect").val() != "all") {
+                   return "1";
+               }
+               return c.警员人数;
+               
+
+
+         }
+ }
+
         ];
 
 

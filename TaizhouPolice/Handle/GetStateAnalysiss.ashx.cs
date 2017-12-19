@@ -495,36 +495,36 @@ namespace TaizhouPolice.Handle
                  if (ssdd!="all"){
                         if (sszd != "all")
                        {
-                         sheet.Rows[i + 2].Cells["B"].Value = ssddtext;
-
-                         sheet.Rows[i + 2].Cells["C"].Value = (i == 0) ? sszdtext : dt.Rows[i][3].ToString();
+                           sheet.Rows[i + 2].Cells["B"].Value = (i != 0) ? dt.Rows[i][3].ToString() : dt.Rows[i][1].ToString();
+                      
                        }
                       else
                        {
                            sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[0][1].ToString();
-                           sheet.Rows[i + 2].Cells["C"].Value = dt.Rows[i][2].ToString();
+                          // sheet.Rows[i + 2].Cells["C"].Value = dt.Rows[i][2].ToString();
+                           if (i != 0) sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[i][1].ToString();
                         }
                      }
                     else
                     {
                         sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[i][1].ToString();
-                        sheet.Rows[i + 2].Cells["C"].Value = "/";
+                      //  sheet.Rows[i + 2].Cells["C"].Value = "/";
 
                     }
                     sheet.Rows[i + 2].Cells["B"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                     sheet.Rows[i + 2].Cells["C"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                    sheet.Rows[i + 2].Cells["D"].Value = Convert.ToInt32(dt.Rows[i][4].ToString());
+                    sheet.Rows[i + 2].Cells["C"].Value = Convert.ToInt32(dt.Rows[i][4].ToString());
+                    sheet.Rows[i + 2].Cells["C"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
+
+                    sheet.Rows[i + 2].Cells["D"].Value = Convert.ToDouble(dt.Rows[i][5].ToString());
                     sheet.Rows[i + 2].Cells["D"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                    sheet.Rows[i + 2].Cells["E"].Value = Convert.ToDouble(dt.Rows[i][5].ToString());
+                    sheet.Rows[i + 2].Cells["E"].Value = dt.Rows[i][6].ToString();
                     sheet.Rows[i + 2].Cells["E"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
-
-                    sheet.Rows[i + 2].Cells["F"].Value = dt.Rows[i][6].ToString();
-                    sheet.Rows[i + 2].Cells["F"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                       }
                sheet.Rows[dt.Rows.Count + 2].Cells[0].Value = "计算公式：设备使用率为 （设备使用数量/设备配发数 *100%），设备使用标准为查询时间段内时长大于10分钟  ";
-               sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 3).Merged = true;
+               sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 4).Merged = true;
                       break;
                   case "2":
                        sheet.Rows[0].Cells[0].Value = title + entityTitle + "对讲机在线时长报表";
@@ -538,36 +538,35 @@ namespace TaizhouPolice.Handle
                     if (ssdd!="all"){
                           if (sszd != "all")
                        {
-                         sheet.Rows[i + 2].Cells["B"].Value = ssddtext;
+                           sheet.Rows[i + 2].Cells["B"].Value = (i != 0) ? dt.Rows[i][3].ToString() : dt.Rows[i][1].ToString();
 
-                         sheet.Rows[i + 2].Cells["C"].Value = (i == 0) ? sszdtext : dt.Rows[i][3].ToString();
                        }
                       else
                        {
                            sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[0][1].ToString();
-                           sheet.Rows[i + 2].Cells["C"].Value = dt.Rows[i][2].ToString();
+                           // sheet.Rows[i + 2].Cells["C"].Value = dt.Rows[i][2].ToString();
+                           if (i != 0) sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[i][1].ToString();
                         }
                        }
                     else
                       {
-                        sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[i][1].ToString();
-                        sheet.Rows[i + 2].Cells["C"].Value = "/";
+                          sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[i][1].ToString();
 
                       }
                     sheet.Rows[i + 2].Cells["B"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                     sheet.Rows[i + 2].Cells["C"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                    sheet.Rows[i + 2].Cells["D"].Value = dt.Rows[i][4].ToString();
+                    sheet.Rows[i + 2].Cells["C"].Value = Convert.ToInt32(dt.Rows[i][4].ToString());
+                    sheet.Rows[i + 2].Cells["C"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
+
+                    sheet.Rows[i + 2].Cells["D"].Value = Convert.ToDouble(dt.Rows[i][5].ToString());
                     sheet.Rows[i + 2].Cells["D"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                    sheet.Rows[i + 2].Cells["E"].Value = dt.Rows[i][5].ToString();
+                    sheet.Rows[i + 2].Cells["E"].Value = dt.Rows[i][6].ToString();
                     sheet.Rows[i + 2].Cells["E"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
-
-                    sheet.Rows[i + 2].Cells["F"].Value = dt.Rows[i][6].ToString();
-                    sheet.Rows[i + 2].Cells["F"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                       }
                   sheet.Rows[dt.Rows.Count + 2].Cells[0].Value = "计算公式：设备使用率为 （设备使用数量/设备配发数 *100%），设备使用标准为查询时间段内时长大于10分钟  ";
-              sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 3).Merged = true;
+              sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 4).Merged = true;
                       break;
                   case "3":
                        sheet.Rows[0].Cells[0].Value = title + entityTitle + "拦截仪在线时长报表";
@@ -581,36 +580,34 @@ namespace TaizhouPolice.Handle
                  if (ssdd!="all"){
                         if (sszd != "all")
                        {
-                         sheet.Rows[i + 2].Cells["B"].Value = ssddtext;
+                           sheet.Rows[i + 2].Cells["B"].Value = (i != 0) ? dt.Rows[i][3].ToString() : dt.Rows[i][1].ToString();
 
-                         sheet.Rows[i + 2].Cells["C"].Value = (i == 0) ? sszdtext : dt.Rows[i][3].ToString();
                        }
                       else
                        {
                            sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[0][1].ToString();
-                           sheet.Rows[i + 2].Cells["C"].Value = dt.Rows[i][2].ToString();
+                           // sheet.Rows[i + 2].Cells["C"].Value = dt.Rows[i][2].ToString();
+                           if (i != 0) sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[i][1].ToString();
                         }
                      }
                     else
                     {
                         sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[i][1].ToString();
-                        sheet.Rows[i + 2].Cells["C"].Value = "/";
-
                     }
-                    sheet.Rows[i + 2].Cells["B"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
-                    sheet.Rows[i + 2].Cells["C"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
+                 sheet.Rows[i + 2].Cells["B"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
+                 sheet.Rows[i + 2].Cells["C"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                    sheet.Rows[i + 2].Cells["D"].Value = dt.Rows[i][4].ToString();
-                    sheet.Rows[i + 2].Cells["D"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
+                 sheet.Rows[i + 2].Cells["C"].Value = Convert.ToInt32(dt.Rows[i][4].ToString());
+                 sheet.Rows[i + 2].Cells["C"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                    sheet.Rows[i + 2].Cells["E"].Value = dt.Rows[i][5].ToString();
-                    sheet.Rows[i + 2].Cells["E"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
+                 sheet.Rows[i + 2].Cells["D"].Value = Convert.ToDouble(dt.Rows[i][5].ToString());
+                 sheet.Rows[i + 2].Cells["D"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                    sheet.Rows[i + 2].Cells["F"].Value = dt.Rows[i][6].ToString();
-                    sheet.Rows[i + 2].Cells["F"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
+                 sheet.Rows[i + 2].Cells["E"].Value = dt.Rows[i][6].ToString();
+                 sheet.Rows[i + 2].Cells["E"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                       }
                sheet.Rows[dt.Rows.Count + 2].Cells[0].Value = "计算公式：设备使用率为 （设备使用数量/设备配发数 *100%），设备使用标准为查询时间段内时长大于10分钟  ";
-              sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 3).Merged = true;
+              sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 4).Merged = true;
                       break;
                  
                   case "4":
@@ -693,36 +690,34 @@ namespace TaizhouPolice.Handle
                           {
                               if (sszd != "all")
                               {
-                                  sheet.Rows[i + 2].Cells["B"].Value = ssddtext;
+                                  sheet.Rows[i + 2].Cells["B"].Value = (i != 0) ? dt.Rows[i][3].ToString() : dt.Rows[i][1].ToString();
 
-                                  sheet.Rows[i + 2].Cells["C"].Value = (i == 0) ? sszdtext : dt.Rows[i][3].ToString();
                               }
                               else
                               {
                                   sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[0][1].ToString();
-                                  sheet.Rows[i + 2].Cells["C"].Value = dt.Rows[i][2].ToString();
+                                  // sheet.Rows[i + 2].Cells["C"].Value = dt.Rows[i][2].ToString();
+                                  if (i != 0) sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[i][1].ToString();
                               }
                           }
                           else
                           {
                               sheet.Rows[i + 2].Cells["B"].Value = dt.Rows[i][1].ToString();
-                              sheet.Rows[i + 2].Cells["C"].Value = "/";
-
                           }
                           sheet.Rows[i + 2].Cells["B"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                           sheet.Rows[i + 2].Cells["C"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                          sheet.Rows[i + 2].Cells["D"].Value = Convert.ToInt32(dt.Rows[i][4].ToString());
+                          sheet.Rows[i + 2].Cells["C"].Value = Convert.ToInt32(dt.Rows[i][4].ToString());
+                          sheet.Rows[i + 2].Cells["C"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
+
+                          sheet.Rows[i + 2].Cells["D"].Value = Convert.ToDouble(dt.Rows[i][5].ToString());
                           sheet.Rows[i + 2].Cells["D"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                          sheet.Rows[i + 2].Cells["E"].Value = Convert.ToDouble(dt.Rows[i][5].ToString());
+                          sheet.Rows[i + 2].Cells["E"].Value = Convert.ToDouble(dt.Rows[i][7].ToString());
                           sheet.Rows[i + 2].Cells["E"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
 
-                          sheet.Rows[i + 2].Cells["F"].Value = Convert.ToDouble(dt.Rows[i][7].ToString());
+                          sheet.Rows[i + 2].Cells["F"].Value = dt.Rows[i][6].ToString();
                           sheet.Rows[i + 2].Cells["F"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
-
-                          sheet.Rows[i + 2].Cells["G"].Value = dt.Rows[i][6].ToString();
-                          sheet.Rows[i + 2].Cells["G"].Style.Borders.SetBorders(MultipleBorders.Outside, Color.FromArgb(0, 0, 0), LineStyle.Thin);
                       }
                       sheet.Rows[dt.Rows.Count + 2].Cells[0].Value = "计算公式：设备使用率为 （设备使用数量/设备配发数 *100%），设备使用标准为查询时间段内视频时长大于10分钟  ";
               sheet.Cells.GetSubrangeAbsolute(dt.Rows.Count + 2, 0, dt.Rows.Count + 2, dt.Columns.Count - 3).Merged = true;
