@@ -228,8 +228,8 @@ function startdatetimedefalute(date) {
             break;
         case "年":
 
-            preDate = new Date(nowYear, 0, 1);
-            lastDate = new Date(nowYear, 11, 31);
+            preDate = new Date(nowYear, 0, 1);//今年
+            lastDate = new Date(nowYear, 11, 31);//今年
 
             hbpreDate = new Date(nowYear - 1, 0, 1);//去年同比
             hblastDate = new Date(nowYear - 1, 11, 31);//去年同比
@@ -241,8 +241,8 @@ function startdatetimedefalute(date) {
         case "半年":
             preDate = new Date(curDate.getTime() - 24 * 60 * 60 * 1000);
 
-            preDate = new Date(nowYear, 0, 1);//去年同比
-            lastDate = new Date(nowYear, 5, 30);//去年同比
+            preDate = new Date(nowYear, 0, 1);///今年
+            lastDate = new Date(nowYear, 5, 30);///今年
 
             hbpreDate = new Date(nowYear - 1, 0, 1);//去年同比
             hblastDate = new Date(nowYear - 1, 5, 30);//去年同比

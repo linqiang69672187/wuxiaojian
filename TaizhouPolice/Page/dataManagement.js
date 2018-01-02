@@ -115,6 +115,7 @@ function startdatetimedefalute(date) {
             lastMonthDate.setDate(1);
             lastMonthDate.setMonth(lastMonthDate.getMonth() - 1);
             var lastMonth = lastMonthDate.getMonth();
+            if (lastMonth == 11) { nowYear -= 1; }
             var lastMonthStartDate = new Date(nowYear, lastMonth, 1);
             var lastMonthEndDate = new Date(nowYear, lastMonth, getMonthDays(lastMonth));
 
