@@ -118,6 +118,7 @@ function startdatetimedefalute(date) {
             lastMonthDate.setMonth(lastMonthDate.getMonth() - 1);
 
             var lastMonth = lastMonthDate.getMonth();
+            if (lastMonth == 11) { nowYear -= 1;}
             var lastMonthStartDate = new Date(nowYear, lastMonth, 1); //这里的年有风险，待修复，可能不是今年
             var lastMonthEndDate = new Date(nowYear, lastMonth, getMonthDays(lastMonth));
 
@@ -170,7 +171,7 @@ function startdatetimedefalute(date) {
 
                     hbpreDate.setMonth(6);
                     preDate.setYear(nowYear - 1);
-                    lastDate = new Date(nowYear - 1, 8, getMonthDays(8));
+                    hblastDate = new Date(nowYear - 1, 8, getMonthDays(8));
 
                     break;
                 case 3:

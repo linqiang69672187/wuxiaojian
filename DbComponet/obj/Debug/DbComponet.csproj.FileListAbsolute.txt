@@ -7,3 +7,9 @@ E:\项目\五小件\TaizhouPolice\DbComponet\bin\Debug\DbComponet.pdb
 E:\项目\五小件\TaizhouPolice\DbComponet\obj\Debug\DbComponet.dll
 E:\项目\五小件\TaizhouPolice\DbComponet\obj\Debug\DbComponet.pdb
 E:\项目\五小件\TaizhouPolice\DbComponet\obj\Debug\DbComponet.csprojResolveAssemblyReference.cache
+E:\工作\五小件\WEB\DbComponet\bin\Debug\DbComponet.dll
+E:\工作\五小件\WEB\DbComponet\bin\Debug\DbComponet.pdb
+E:\工作\五小件\WEB\DbComponet\bin\Debug\GemBox.Spreadsheet.dll
+E:\工作\五小件\WEB\DbComponet\obj\Debug\DbComponet.csprojResolveAssemblyReference.cache
+E:\工作\五小件\WEB\DbComponet\obj\Debug\DbComponet.dll
+E:\工作\五小件\WEB\DbComponet\obj\Debug\DbComponet.pdb
