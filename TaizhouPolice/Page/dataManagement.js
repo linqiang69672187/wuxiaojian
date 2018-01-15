@@ -358,7 +358,7 @@ $(function () {
              .on('xhr.dt', function (e, settings, json, xhr) {
                  var height = ($(window).height());
                  if (height < 800) {
-                     var tableH = height - 455;
+                     var tableH = height - 405;
                      $("#search-result-table_wrapper").css({ 'overflow-y': 'auto', 'overflow-x': 'hidden', 'height': tableH });
 
                  }

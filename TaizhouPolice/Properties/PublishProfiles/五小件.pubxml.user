@@ -6820,7 +6820,7 @@
       <publishTime>12/05/2017 14:05:36</publishTime>
     </File>
     <File Include="Page/dataManagement.js">
-      <publishTime>01/02/2018 16:35:00</publishTime>
+      <publishTime>01/09/2018 16:27:08</publishTime>
     </File>
     <File Include="Page/default.html">
       <publishTime>12/05/2017 14:05:36</publishTime>
@@ -6832,13 +6832,13 @@
       <publishTime>12/13/2017 08:39:02</publishTime>
     </File>
     <File Include="Page/deviceManagement.js">
-      <publishTime>12/13/2017 08:47:31</publishTime>
+      <publishTime>01/09/2018 11:31:49</publishTime>
     </File>
     <File Include="Page/entityManagement.html">
       <publishTime>12/05/2017 14:05:36</publishTime>
     </File>
     <File Include="Page/entityManagement.js">
-      <publishTime>12/05/2017 14:05:36</publishTime>
+      <publishTime>01/09/2018 15:49:13</publishTime>
     </File>
     <File Include="Page/Header.aspx">
       <publishTime>12/05/2017 14:05:36</publishTime>
@@ -6886,19 +6886,19 @@
       <publishTime>12/05/2017 14:05:36</publishTime>
     </File>
     <File Include="Page/qxSetting.js">
-      <publishTime>12/05/2017 14:05:36</publishTime>
+      <publishTime>01/09/2018 15:49:13</publishTime>
     </File>
     <File Include="Page/stateAnalysis.html">
-      <publishTime>12/18/2017 10:29:24</publishTime>
+      <publishTime>01/09/2018 13:51:21</publishTime>
     </File>
     <File Include="Page/stateAnalysis.js">
-      <publishTime>01/02/2018 16:31:04</publishTime>
+      <publishTime>01/09/2018 16:25:23</publishTime>
     </File>
     <File Include="Page/userManagement.html">
       <publishTime>12/05/2017 14:05:36</publishTime>
     </File>
     <File Include="Page/userManagement.js">
-      <publishTime>12/05/2017 14:05:36</publishTime>
+      <publishTime>01/09/2018 11:20:23</publishTime>
     </File>
     <File Include="Page/Workanalysis.html">
       <publishTime>12/05/2017 14:05:36</publishTime>

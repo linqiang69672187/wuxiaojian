@@ -83,7 +83,7 @@ $(function () {
             // console.log( 'Redraw occurred at: '+new Date().getTime() );
         }) 
         .on('xhr.dt', function (e, settings, json, xhr) {
-
+      
             $(".search-result-flooterleft span").text(json.data.length+"台");
              
             // Note no return - manipulate the data directly in the JSON object.
@@ -132,10 +132,10 @@ $(function () {
         
             var height = ($(window).height());
             if (height < 800) {
-                var tableH = height -350;
+                var tableH = height -400;
                 $("#search-result-table_wrapper").css({ 'overflow-y': 'auto', 'overflow-x': 'hidden', 'height': tableH });
 
-                $(".table-responsive").css({ 'overflow-y': 'hidden', 'overflow-x': 'hidden', 'height': 350 });
+                $(".table-responsive").css({ 'overflow-y': 'hidden', 'overflow-x': 'hidden', 'height': 300 });
             }
         })
             .DataTable({

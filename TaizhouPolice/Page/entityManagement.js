@@ -4,7 +4,15 @@ var table;
 function createDataTable() {
 
     table = $('#search-result-table')
+        .on('xhr.dt', function (e, settings, json, xhr) {
+            var height = ($(window).height());
+            if (height < 800) {
+                var tableH = height - 400;
+                $("#search-result-table_wrapper").css({ 'overflow-y': 'auto', 'overflow-x': 'hidden', 'height': tableH });
 
+                $(".table-responsive").css({ 'overflow-y': 'hidden', 'overflow-x': 'hidden', 'height': 300 });
+            }
+        })
         .DataTable({
             ajax: {
                 url: "../Handle/GetManageEntitys.ashx",

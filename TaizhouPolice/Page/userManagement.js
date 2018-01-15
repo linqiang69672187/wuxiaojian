@@ -94,7 +94,14 @@ $(function () {
     function createDataTable() {
 
         table = $('#search-result-table')
-      
+         .on('xhr.dt', function (e, settings, json, xhr) {
+             var height = ($(window).height());
+             if (height < 800) {
+           
+                 $(".table-responsive").css({'height': '300px' });
+
+             }
+         })
             .DataTable({
                 ajax: {
                     url: "../Handle/GetUsers.ashx",
@@ -319,6 +326,8 @@ $(function () {
     if (!$.cookie("username")) {
         window.location.href = "../Login.html";
     }
+
+
 
 })
 
