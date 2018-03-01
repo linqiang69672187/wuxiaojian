@@ -580,8 +580,8 @@ $(function () {
                          targets:10,
                          render: function (a, b, c, d) { var html = "<a  class='btn btn-sm btn-primary txzs-btn' parentid='" + c.EntityId + "'  >查看详情</a>"; return html; }
                      }
-                 
-                    
+                            
+         
 
 
             ],

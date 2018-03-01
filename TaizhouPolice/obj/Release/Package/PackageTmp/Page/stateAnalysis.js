@@ -257,13 +257,13 @@ function startdatetimedefalute(date) {
     // $('.end_form_datetime').val(transferDate(lastDate));
     starttime = transferDate(preDate);
     endtime = transferDate(lastDate);
-    starttime = "2017/06/01"
-    endtime = "2017/12/31"
+    //starttime = "2018/01/01"
+   // endtime = "2018/01/25"
 
     hbstarttime = transferDate(hbpreDate);//环比时间
     hbendtime = transferDate(hblastDate);//环比时间
-    hbstarttime = "2016/06/01"
-    hbendtime = "2016/12/31"
+   // hbstarttime = "2017/01/01"
+  //  hbendtime = "2017/01/25"
     var date3 = lastDate.getTime() - preDate.getTime()  //时间差的毫秒数
     days = Math.floor(date3 / (24 * 3600 * 1000)) + 1;
 
@@ -807,10 +807,11 @@ $(function () {
                      case "3":   //对讲机
 
                          table.column(6).visible(false);
-                        // $("#search-result-table thead tr th:eq(5)").html("在线时长总和(小时)");
+                         $("#search-result-table thead tr th:eq(4)").html("在线时长总和(小时)");
                          break;      
                      case "5":   //执法记录仪
                          table.column(6).visible(true);
+                         $("#search-result-table thead tr th:eq(4)").html("文件大小(GB)");
                          $("#search-result-table thead tr th:eq(5)").html("视频长度总和(小时)");
 
                          break;

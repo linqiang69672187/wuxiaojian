@@ -233,10 +233,10 @@ namespace TaizhouPolice.Handle
                      dr["设备配发数"] = countdevices;
                      devicescount += countdevices;
 
-                     dr["在线时长"] = ((double)在线时长 / 3600).ToString("0.00");
-                     dr["视频大小"] = ((double)视频大小 / 1024).ToString("0.00");
-                      zxsc +=(double)在线时长 / 3600;
-                      spdx += (double)视频大小 / 1024;
+                     dr["在线时长"] = ((double)在线时长 / 1024/1024).ToString("0.00");
+                     dr["视频大小"] = ((double)视频大小 / 3600).ToString("0.00");
+                      zxsc +=(double)在线时长 /1024/1024;
+                      spdx += (double)视频大小 / 3600;
                      dr["设备使用率"] = (countdevices != 0) ? (deviceuse).ToString("0.00") + "%" : "-";
              
                   
