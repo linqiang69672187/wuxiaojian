@@ -882,7 +882,7 @@ $(function () {
                 "search": "查找设备:",
                 "paginate": {
                     "previous": "上一页",
-                    "next": "下一页"
+                    "next": "下一页" 
                 }
             },
             dom: "" + "t" + "<'row' p>B",
@@ -890,9 +890,6 @@ $(function () {
             }
 
             });
-
-   
-
      
     }
 
