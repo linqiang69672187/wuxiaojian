@@ -22,3 +22,11 @@ E:\工作\五小件\WEB\TaizhouPolice\obj\Release\TaizhouPolice.csprojResolveAss
 E:\工作\五小件\WEB\TaizhouPolice\obj\Release\TaizhouPolice.dll
 E:\工作\五小件\WEB\TaizhouPolice\obj\Release\TaizhouPolice.pdb
 E:\工作\五小件\WEB\TaizhouPolice\bin\TaizhouPolice.dll.config
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\TaizhouPolice\bin\TaizhouPolice.dll.config
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\TaizhouPolice\bin\TaizhouPolice.dll
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\TaizhouPolice\bin\TaizhouPolice.pdb
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\TaizhouPolice\bin\DbComponet.dll
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\TaizhouPolice\bin\DbComponet.pdb
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\TaizhouPolice\obj\Release\TaizhouPolice.csprojResolveAssemblyReference.cache
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\TaizhouPolice\obj\Release\TaizhouPolice.dll
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\TaizhouPolice\obj\Release\TaizhouPolice.pdb

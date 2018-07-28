@@ -13,3 +13,9 @@ E:\工作\五小件\WEB\DbComponet\bin\Release\DbComponet.pdb
 E:\工作\五小件\WEB\DbComponet\bin\Release\GemBox.Spreadsheet.dll
 E:\工作\五小件\WEB\DbComponet\obj\Release\DbComponet.dll
 E:\工作\五小件\WEB\DbComponet\obj\Release\DbComponet.pdb
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\DbComponet\bin\Release\DbComponet.dll
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\DbComponet\bin\Release\DbComponet.pdb
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\DbComponet\bin\Release\GemBox.Spreadsheet.dll
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\DbComponet\obj\Release\DbComponet.csprojResolveAssemblyReference.cache
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\DbComponet\obj\Release\DbComponet.dll
+E:\工作\五小件\wuxiaojian\wuxiaojian\wuxiaojian\DbComponet\obj\Release\DbComponet.pdb
